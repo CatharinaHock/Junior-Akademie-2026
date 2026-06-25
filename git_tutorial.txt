@@ -1,0 +1,33 @@
+The most important git commands.
+
+Before you start making changes, make sure you have the most recent version of the project. 
+If you don't do this, it might get very annoying to merge the two independent versions. We don't want that.
+
+git pull
+## (This makes downloads the most recent version of the project to your laptop.)
+git status
+## (Check the status of the repo.) 
+
+
+After making changes, type the following commands:
+
+git add . 
+## (Stages all changes (modified, new, and deleted files) so they are included in the next commit.)
+git commit -m "Message where you describe changes briefly"
+## (This commits the changes locally, on your local git.)
+git pull
+## (Pull again to make sure you have the newest version. Very important, as someone else might have pushed while you were working.)
+git push
+## (This command pushes the changes to the GitHub repo. Only after that are the changes visible to other collaborators.)
+
+Other useful commands
+
+git status
+## Checks your status. Tells you which files have been changed, and untracked changes.
+
+git branch
+## Tells you which branch you're on. We probably don't want multiple branches because things can get messy. It should say "master" or "main".
+
+git log
+## Shows you the recent history.
+
