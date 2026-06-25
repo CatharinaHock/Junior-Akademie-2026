@@ -31,3 +31,33 @@ git branch
 git log
 ## Shows you the recent history.
 
+### Here's one example of what this workflow could look like in your command line.
+
+(base) user@UX410UAK:~/path/Junior-Akademie-2026$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	git-cheat-sheet-education.pdf
+	git_tutorial.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+(base) user@UX410UAK:~/path/Junior-Akademie-2026$ git add .
+(base) user@UX410UAK:~/path/Junior-Akademie-2026$ git commit -m "Added git tutorials"
+[main 807a9f0] Added git tutorials
+ 2 files changed, 33 insertions(+)
+ create mode 100644 git-cheat-sheet-education.pdf
+ create mode 100644 git_tutorial.txt
+(base) user@UX410UAK:~/path/Junior-Akademie-2026$ git pull
+Already up to date.
+(base) user@UX410UAK:~/path/Junior-Akademie-2026$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 91.69 KiB | 3.99 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:CatharinaHock/Junior-Akademie-2026.git
+   d108505..807a9f0  main -> main
+
