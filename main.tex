@@ -1,0 +1,1340 @@
+\documentclass[a4paper, 11pt]{article}
+%\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{calc}
+%\usepackage{fourier} %% changes everything to sans-serif!
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{textcomp}
+%\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{cd}
+\usepackage{dirtytalk}
+
+\usepackage{verbatim}
+\usepackage{pdfpages}
+\usepackage{caption}
+\captionsetup[figure]{labelfont=footnotesize}
+\usepackage{hyperref}
+
+%% neu
+\usepackage{physics}
+\usepackage{accents} %% for multiple subscripts
+\usepackage{fancyhdr} %% for header and footer
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[ngerman]{babel}
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+
+\title{DJA Ostbevern 2026}
+\author{Catharina Hock, Stefanie Hövermann}
+\date{August  2026}
+
+\begin{document}
+
+\maketitle 
+\begin{figure}[h]
+\begin{center}
+    \includegraphics[height=15cm]{Bilder/Titelbild transparent.jpg}
+\end{center}
+
+\end{figure}
+\newpage
+\tableofcontents \newpage  
+\section{Basic Concepts of Acoustics}
+Since we want to take a closer look at the origin of noises, sounds, and music at the Junior Academy, we will first familiarize ourselves with the basic concepts of acoustics. The field of acoustics primarily deals with the \textbf{study of sound} and its propagation. There are three main branches of acoustics:
+\begin{itemize}
+    \item \textbf{physical acoustics}: physical acoustics deals with explaining acoustic phenomena using classical mechanics
+    \item \textbf{physiological acoustics}: physiological acoustics studies the reception and transmission of sound within the human auditory system
+    \item \textbf{psychological acoustics}: psychological acoustics investigates how acoustic nerve stimuli are translated into auditory perception, i.e., it explains why sounds and tones are perceived the way they are
+\end{itemize}
+In the following, we will mainly focus on physical acoustics.
+
+\subsection{Sound}
+In science, the term ``sound'' describes mechanical vibrations in an elastic medium (e.g., air or water). You may also have heard the term ``sound wave.'' You can imagine a \textbf{sound wave} similarly to a wave in water. When air particles move, i.e., oscillate back and forth, they transfer their motion to neighboring air particles. This \textbf{motion of air particles}, however, is not visible in contrast to water waves. Later, we will take a closer look at sound waves.
+
+\subsection{Tone}
+You are probably familiar with the term tone as a ``sound event'' produced by a musical instrument or the human voice. From a physical perspective, a tone is determined by the frequency of a harmonic sound wave. The frequency indicates how many oscillations the air particles perform per second and is therefore crucial for which tone you perceive. A tone with a higher frequency is perceived as a ``higher'' tone. Thus, the physical concept of tone describes what you likely know as \textbf{pitch}.
+
+\subsection{Timbre}
+The physical concept of sound (timbre) corresponds roughly to what is commonly referred to as ``tone'' in music and everyday language. For example, if you play a tone with the same frequency on a piano and a violin, you can still distinguish which instrument produced the sound. This is because what we hear is not just a single tone but a \textbf{superposition of sound waves with different frequencies}. This combination of overlapping sound waves is called a sound (timbre). The reason you can recognize an instrument by hearing a melody is that each instrument has a characteristic composition of different frequencies. Without these differences in sound, music would be very monotonous.
+
+\section{Oscillations and Waves}
+As you have probably noticed, oscillations and waves play a major role in acoustics (and in many other areas of physics). To gain a better understanding, we will now examine the mathematical foundations and physical concepts in more detail.
+
+\subsection{Oscillations}
+In physics, an oscillation is a periodic variation of a system's state variables over time. For example, imagine an object attached to a spring. If you push the object, it starts to oscillate and moves up and down repeatedly. The quantity that changes is the distance from its equilibrium position. This distance is called the \textbf{displacement}. 
+
+We will mainly consider periodic, harmonic oscillations. These are oscillations where the system returns to its initial state after the same time interval $T$. This time is called the \textbf{period}. Any harmonic oscillation can be described by a sine function. The maximum displacement from the equilibrium position is called the \textbf{amplitude}. A system performing harmonic oscillations is called a \textbf{harmonic oscillator}.
+
+\subsubsection{Mathematical Description: Trigonometric Functions}
+
+Trigonometric functions describe the relationship between angles and ratios of sides in triangles (originally right-angled triangles). They are fundamental for describing oscillations and waves.
+
+\paragraph{Definition of the Sine and Cosine Function}
+In a right triangle, the sine of an angle $\alpha$ is defined as:
+\begin{align}
+    \sin(\alpha) = \frac{\text{opposite }}{\text{hypotenuse}} \\  
+    \cos(\alpha) = \frac{\text{adjacent}}{\text{hypotenuse}}
+\end{align}
+
+
+If we now interpret the angle as a variable $x$ (in radians) and plot $\sin(x)$, we obtain the sine function, which describes periodic motion (see \autoref{img:sinusfunktion}).
+
+\paragraph{radians }
+\paragraph{General Form of Harmonic Oscillations}
+
+\begin{figure}[!ht]
+\begin{center}
+    \begin{minipage}{0.52\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/rechtwinkliges Dreieck.jpeg}
+        \caption{\footnotesize right-angled triangle}
+        \label{img:rechtwinkliges_Dreieck}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.38\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/Sinusfunktion.jpeg}
+        \caption{\footnotesize Sine function}
+        \label{img:sinusfunktion}
+    \end{minipage}
+\end{center}
+\end{figure} 
+
+
+A general harmonic oscillation can be written as:
+\begin{equation}
+     f(x)= a \cdot sin(b \cdot x+c)+d
+\end{equation}
+
+Therer are four parameters affecting the periodic function as described in the following :
+\begin{itemize}
+    \item $a$: amplitude (vertical stretching/compression)
+    \item $b$: affects the period, with $b = \frac{2\pi}{T}$
+    \item $c$: phase shift (horizontal shift)
+    \item $d$: vertical shift
+\end{itemize}
+
+\paragraph{Cosine Function}
+The cosine function is simply a phase-shifted sine function:
+\begin{equation}
+    \cos(x) = \sin\left(x + \frac{\pi}{2}\right)
+\end{equation}
+
+Thus, cosine functions can also describe harmonic oscillations:
+\begin{equation}
+    g(x) = a \cos(bx + c) + d
+\end{equation}
+
+
+\subsection{Mechanical Waves}
+A particle which is capable of oscillating/vibrating is called oscillator. 
+When several oscillators are coupled and set into motion, the oscillation propagates through space. We again consider harmonic waves, which can be described using sine and cosine functions. A wave is therefore a spatial and temporal periodic change of physical quantities.
+If you observe the space at intervals of one period
+T, it appears unchanged each time. If all coupled oscillators reach their maximum amplitude at the same time, we say that the oscillators are 'in phase'.
+In the case of water waves, the individual oscillators are the water molecules that oscillate back and forth.
+They are coupled to one another via hydrogen bonds. The following quantities are suitable for describing
+mechanical, harmonic waves:
+\begin{itemize}
+    \item \textbf{Period $T$}: time for one complete oscillation
+    \item \textbf{Frequency $f$}: number of oscillations per unit time, $f = \frac{1}{T}$
+    \item \textbf{Wavelength $\lambda$}: shortest distance between two points oscillating in phase -- this is the distance from one wave crest to the next (or from one trough to the next), as can be seen directly in a position-displacement diagram.
+    \item \textbf{Wave speed $c$}: speed at which the wave propagates
+\end{itemize}
+To describe and visualize waves physically, several types of diagrams are used. If we want to describe the state of space at a specific time $t_0$, a position-deviation diagram is suitable. In this diagram, you can see the deviation of different oscillators at a given time. On the x-axis, you find the distance of the oscillators from a reference point $x_0$, and on the y-axis their displacement can be seen. This allows you to determine the oscillators' distances from their equilibrium position at a certain time  $t_0$.   The left diagram in Figure \ref{img: harmonische Welle} shows such a position-displacement diagram. \\
+If you want to describe the motion of an oscillator located at position $x_0$, we use a time-displacement diagram (see the right diagram in Figure \ref{img: harmonische Welle}). \footnote{https://www2.physki.de/PhysKi/images/thumb/7/76/Waveharm2.png/400px-Waveharm2.png}
+\begin{figure}[!ht]
+\begin{center}
+    \includegraphics[height=4cm]{Bilder/Wellen.jpeg}
+    \caption{\footnotesize harmonic wave}
+    \label{img: harmonische Welle}
+\end{center}
+\end{figure}
+\\
+If you want to represent the temporal evolution of waves in space, position-displacement diagrams at different points in time are suitable. \footnote{https://www.leifiphysik.de/mechanik/mechanische-wellen/aufgabe/harmonische-wellen}
+\begin{figure}[!ht]
+\begin{center}
+    \includegraphics[height=4cm]{Bilder/fortschreitende Welle.jpeg}
+    \caption{\footnotesize propagating harmonic wave}
+    \label{img: fortschreitende Welle}
+\end{center}
+\end{figure}
+\\
+
+\paragraph{Relationship Between Wave Quantities}
+The following relationship holds between the different wave quantities:
+\begin{equation}
+    c=\frac{\lambda}{T} = \lambda \cdot f
+\end{equation}
+This formula can be understood intuitively: within one second, $f$ complete waves pass a given point. Each wave has length $\lambda$. Therefore, the wave travels a total distance of $f \cdot \lambda$ per second -- and that is exactly the wave speed $c$.
+
+\subsubsection{Different Types of Waves}
+In order to describe a wave and its propagation through space even more accurately, we distinguish between two fundamental types of waves:
+\begin{itemize}
+    \item \textbf{Transverse waves}: the oscillators move \textbf{perpendicular} to the direction in which the wave travels. \\
+    \textit{Example:} If you shake one end of a rope up and down, a wave travels along the rope horizontally while the rope itself moves vertically. Water waves behave similarly.
+    \item \textbf{Longitudinal waves}: the oscillators move \textbf{parallel} to the direction of propagation. Instead of peaks and troughs, the wave consists of alternating regions of compression (particles close together) and rarefaction (particles spread apart). \\
+    \textit{Example:} If you push one end of a Slinky spring back and forth along its length, you can observe a longitudinal wave travelling through the spring.
+\end{itemize}
+
+\begin{figure}[!ht]
+\begin{center}
+   \includegraphics[height = 7 cm ]{Bilder/Wellen longitudinal, transversal .png}
+    
+    \caption{\footnotesize  Longitudinalwave (top) and transverse  wave (bottom)}
+    \label{img: wave types}
+
+    %Quelle: https://www.researchgate.net/figure/llustration-of-a-transverse-wave-and-a-longitudinal-wave_fig6_334074508%
+\end{center}
+\end{figure}
+
+\textbf{Sound waves are longitudinal waves.} When a loudspeaker or a vibrating string moves back and forth, it pushes the surrounding air particles together and pulls them apart alternately. These pressure variations propagate through the air and eventually reach our ears, where they are perceived as sound.
+
+
+\subsubsection{Mechanical Waves in Acoustics}
+
+Now that we understand what mechanical waves are, we can take a closer look at how they appear in acoustics.
+
+\paragraph{Sound as a Pressure Wave}
+Sound is a longitudinal mechanical wave that propagates through an elastic medium such as air, water, or solid materials. The vibrating source -- for example a guitar string or a loudspeaker membrane -- causes the surrounding air molecules to oscillate back and forth. This creates alternating regions of high pressure (compressions) and low pressure (rarefactions) that travel through the air as a wave.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Bilder/Schallwelle.png}
+    \caption{propagation of a sound wave by moving air particles}
+    %Quelle : https://scienceready.com.au/pages/properties-of-longitudinal-waves?srsltid=AfmBOooII3UfO-C_-FxYRDm-lTvWtuxHEt6kLbHXJp3DsEo41Hkc5vyy%
+    \label{fig:placeholder}
+\end{figure}
+
+\paragraph{Speed of Sound}
+Sound travels through air at approximately
+\begin{equation}
+    c_{\text{sound}} \approx 343 \, \frac{\text{m}}{\text{s}}
+\end{equation}
+at room temperature. This is much slower than the speed of light ($c_{\text{light}} \approx 3 \times 10^8 \, \frac{\text{m}}{\text{s}}$). You experience this difference every time there is a thunderstorm: you see the lightning almost instantly, but the sound of the thunder arrives several seconds later.
+
+\paragraph{Frequency and Pitch}
+The frequency of a sound wave determines the pitch you perceive:
+\begin{itemize}
+    \item \textbf{High frequency} $\Rightarrow$ high pitch 
+    \item \textbf{Low frequency} $\Rightarrow$ low pitch 
+\end{itemize}
+The human ear can perceive sounds in the frequency range of approximately
+\begin{equation}
+    20 \, \text{Hz} \leq f \leq 20{,}000 \, \text{Hz}
+\end{equation}
+Sounds below 20\,Hz are called \textbf{infrasound} -- these are too low for humans to hear, but some animals such as elephants use them to communicate over long distances. Sounds above 20{,}000\,Hz are called \textbf{ultrasound} -- bats and dogs can perceive these frequencies.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Sound} & \textbf{Frequency} \\
+\hline
+Infrasound (inaudible) & $< 20\,\text{Hz}$ \\
+Human hearing range   & $20\,\text{Hz} - 20{,}000\,\text{Hz}$ \\
+Middle A (concert pitch) & $440\,\text{Hz}$ \\
+Ultrasound (inaudible) & $> 20{,}000\,\text{Hz}$ \\
+\hline
+\end{tabular}
+\caption{Frequency ranges relevant to acoustics}
+\label{tab:frequencies}
+\end{table}
+The amplitude of the oscillation determines the volume level of the sound. The greater the amplitude, the louder the sound becomes.
+
+\subsubsection{Superposition of Waves}
+
+\paragraph{Principle of Superposition:}
+When multiple waves meet at a point, they overlap. This means that the displacements of the individual waves simply add up at every point, resulting in a new combined wave. The wave that results from this superposition is called the \textbf{resulting wave}.
+
+A helpful analogy: imagine two people throwing stones into a calm lake at the same time. Where the ripples from both stones meet, they overlap -- sometimes creating bigger waves, sometimes cancelling each other out.
+
+If waves with the same frequency meet, they can either reinforce or weaken each other depending on their \textbf{phase relationship} -- that is, how their peaks and troughs line up:
+
+\begin{itemize}
+    \item \textbf{Constructive interference}: the peaks of both waves align. The amplitudes add up, and the resulting wave is larger than either individual wave.
+    \item \textbf{Destructive interference}: the peak of one wave aligns with the trough of the other. The amplitudes cancel out, and the resulting wave has a smaller amplitude -- in the ideal case, the waves cancel completely.
+\end{itemize}
+
+Both phenomena are shown in Figure \ref{img: Interferenz}.
+
+\begin{figure}[!ht]
+\begin{center}
+    \includegraphics[height=4cm]{Bilder/Interferenz.jpeg}
+    \caption{\footnotesize interference phenomena}
+    \label{img: Interferenz}
+\end{center}
+\end{figure}
+
+\textit{Real-world example:} Noise-cancelling headphones use destructive interference. A microphone picks up the surrounding noise, and the headphones produce a wave with exactly the opposite phase -- the two waves cancel each other out, and you hear silence.
+
+\paragraph{Standing Waves:}
+
+A particularly important special case of superposition occurs when two waves with the \textbf{same wavelength and frequency travel in opposite directions} and overlap. The result is a so-called \textbf{standing wave}.
+
+Unlike a normal (travelling) wave, a standing wave does not appear to move through space. Instead, certain points remain permanently at rest, while others oscillate with maximum amplitude. The following terms are used:
+
+\begin{itemize}
+    \item \textbf{Nodes (N)}: points that remain permanently at rest
+    \item \textbf{Antinodes (A)}: points that oscillate with maximum amplitude
+\end{itemize}
+
+Nodes and antinodes alternate regularly, always separated by a distance of:
+\begin{equation}
+    \Delta x = \frac{\lambda}{4}
+\end{equation}
+
+Figure \ref{img: stehende Welle} shows a standing wave at different moments in time. Notice how the wave pattern does not travel -- it simply oscillates up and down in place.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[height=6cm]{Bilder/stehende Welle.png}
+    \caption{standing wave at different times}
+    \label{img: stehende Welle}
+\end{figure}
+
+\paragraph{Harmonics -- At Which Frequencies Do Standing Waves Occur?} \\  
+Standing waves can only form at specific frequencies. These depend on the \textbf{length of the medium} (e.g.\ a string or a air column) and on the \textbf{boundary conditions} -- that is, what happens at the ends of the medium. We distinguish three important cases:
+
+\subparagraph{Case 1: One Fixed End, One Free End}
+
+A \textbf{fixed end} is always a node (the medium cannot move there). A \textbf{free end} is always an antinode (the medium can oscillate freely).
+
+\textit{Example:} A rope attached to a wall at one end, which you shake at the other end, sound waves in a test tube
+
+Standing waves can form when the length $l$ of the medium satisfies:
+\begin{equation}
+    l = \frac{2n+1}{4} \cdot \lambda = \frac{(2n+1) \cdot c}{4f} \qquad n \in \mathbb{N}_0
+\end{equation}
+
+The table below shows the first few allowed cases:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|l|}
+\hline
+$n$ & Condition & Sketch & Description \\
+\hline
+0 & $l = \dfrac{\lambda}{4}$ & N---A & fundamental mode (1st harmonic) \\[6pt]
+1 & $l = \dfrac{3\lambda}{4}$ & N-A-N-A & 2nd harmonic \\[6pt]
+2 & $l = \dfrac{5\lambda}{4}$ & N-A-N-A-N-A & 3rd harmonic \\[6pt]
+\hline
+\end{tabular}
+\caption{Standing waves with one fixed and one free end}
+\label{tab:harmonics_one_fixed}
+\end{table}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Bilder/unterschiedliche Enden harmoics.png}
+    \caption{Harmonic waves in a medium with a fixed end and a free end }
+    \label{fig:different ends - harmonics }
+    %Quelle: https://www.savemyexams.com/dp/physics/ib/23/sl/revision-notes/wave-behaviour/standing-waves-and-resonance/harmonics-in-strings-and-pipes/%
+\end{figure}
+
+\textit{Musical application:} A simple and convincing experiment illustrates this case: 
+if you blow across the opening of a test tube, you produce a sound. 
+The closed bottom of the test tube is a \textbf{fixed end} and therefore always a \textbf{node}, 
+while the open top is a \textbf{free end} and therefore always an \textbf{antinode}. 
+The simplest standing wave that can form under these conditions has exactly one node (at the bottom) 
+and one antinode (at the top) -- this corresponds to $n=0$, i.e.:
+\begin{equation}
+    l = \frac{\lambda}{4}
+\end{equation}
+The length of the test tube equals exactly one quarter of the wavelength. 
+This is the \textbf{fundamental mode}: the lowest frequency at which a standing wave can form, 
+and therefore the pitch you hear when blowing across the tube. 
+The longer the test tube, the longer the wavelength -- and the lower the pitch. 
+This is why filling the test tube with water (and thus shortening the air column) produces a higher tone.
+Only odd harmonics are present in this system, giving it a characteristic hollow sound.
+
+\subparagraph{Case 2: Two Fixed Ends}\\   
+
+Both ends are fixed and thus nodes. \\ 
+\textit{Example:} A \textbf{string fixed at both ends}, such as a guitar or violin string 
+
+In this case, standing waves form when the following condition is fulfilled:
+\begin{equation}
+    l = \frac{n}{2} \cdot \lambda = \frac{n \cdot c}{2f} \qquad n \in \mathbb{N}
+\end{equation}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|l|}
+\hline
+$n$ & Condition & Sketch & Description \\
+\hline
+1 & $l = \dfrac{\lambda}{2}$ & N---A---N & fundamental mode (1st harmonic) \\[6pt]
+2 & $l = \lambda$ & N-A-N-A-N & 2nd harmonic (1st overtone) \\[6pt]
+3 & $l = \dfrac{3\lambda}{2}$ & N-A-N-A-N-A-N & 3rd harmonic (2nd overtone) \\[6pt]
+\hline
+\end{tabular}
+\caption{Standing waves with two fixed ends}
+\label{tab:harmonics_two_fixed}
+\end{table}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Bilder/feste Enen harmonics.png}
+    \caption{Harmonic waves in a medium with fixed ends }
+    \label{fig:different ends - harmonics }
+\end{figure}
+\subparagraph{Case 3: Two Free Ends}
+
+Both ends are free and thus antinodes. 
+\textit{Example:} wind instruments open at both ends such as an open organ pipe 
+
+The condition is the same as for two fixed ends:
+\begin{equation}
+    l = \frac{n}{2} \cdot \lambda = \frac{n \cdot c}{2f} \qquad n \in \mathbb{N}
+\end{equation}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Bilder/lose Enden harmonics.png}
+    \caption{Harmonic waves in a medium with free ends}
+    \label{fig:free ends harmonics}
+\end{figure}
+
+Although the condition for the wavelength looks identical to Case 2
+the standing wave pattern on the medium looks different. The key difference lies in the 
+\textbf{boundary conditions} -- that is, what happens at the ends. Think of it this way: the mathematical condition $l = \frac{n}{2}\lambda$ tells you 
+\textit{how many half-wavelengths fit into the medium} -- but the boundary conditions 
+tell you \textit{where exactly the wave starts and ends}. 
+
+\paragraph{Summary: Boundary Conditions and Their Effects} \\  
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{}
+    \caption{Caption}
+    \label{fig:placeholder}
+\end{figure}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|l|}
+\hline
+\textbf{Boundary condition} & \textbf{Condition} & \textbf{Harmonics present} & \textbf{Example} \\
+\hline
+One fixed, one free end & $l = \frac{(2n+1)}{4}\lambda$ & odd only (1st, 3rd, 5th \ldots) & closed wind instrument \\
+Two fixed ends          & $l = \frac{n}{2}\lambda$      & all (1st, 2nd, 3rd \ldots)      & string instrument \\
+Two free ends           & $l = \frac{n}{2}\lambda$      & all (1st, 2nd, 3rd \ldots)      & open organ pipe \\
+\hline
+\end{tabular}
+\caption{Overview of boundary conditions for standing waves}
+\label{tab:boundary_conditions}
+\end{table}
+The \textbf{1st harmonic} (or \textbf{fundamental}) is always the lowest 
+frequency at which a standing wave can form in a given medium -- it has the fewest possible 
+nodes and antinodes. The \textbf{2nd harmonic} has exactly twice the frequency of the 
+fundamental, the \textbf{3rd harmonic} three times, and so on. Each higher harmonic fits 
+one additional half-wavelength into the medium. When you play a musical instrument, 
+you typically hear the fundamental as the \textbf{pitch}, while the mix of higher harmonics 
+shapes the \textbf{timbre} - we will discuss this in  detail later on. 
+
+
+\section{Sound, Music and Mathematics}
+
+After learning about waves, we now want to understand how these ideas help us describe \textbf{sound and music}. In particular, we will see how mathematical concepts such as sine functions and superposition explain why musical instruments produce different sounds.
+
+\subsection{Fundamental Frequency and Harmonics}
+
+When a string (for example on a guitar) vibrates, it does not only oscillate as a whole. Instead, it can vibrate in several different ways at the same time.
+
+The simplest vibration is called the \textbf{fundamental frequency}. It determines the pitch of the tone we hear.
+
+In addition, the string can also vibrate in smaller sections. These additional vibrations are called \textbf{harmonics} or \textbf{overtones}.
+
+Mathematically, the frequencies of these harmonics are given by:
+\begin{equation}
+    f_n = n \cdot f_1
+\end{equation}
+
+\begin{itemize}
+    \item $f_1$: fundamental frequency
+    \item $n = 1,2,3,\dots$: harmonic number
+\end{itemize}
+
+\paragraph{Intuitive Explanation:}
+\begin{itemize}
+    \item The string can vibrate as a whole (first harmonic)
+    \item It can also vibrate in two halves (second harmonic)
+    \item Or in three parts, four parts, and so on
+\end{itemize}
+
+Each of these vibrations corresponds to a different sine wave.
+
+\subsection{Superposition of Waves and Sound}
+
+All these vibrations occur at the same time. This means that the resulting sound is a \textbf{superposition} of many sine waves.
+
+\paragraph{Key Idea:}
+Any sound can be described as a sum of sine and cosine functions.
+
+This is why the sine function is so important in acoustics.
+
+\subsection{Timbre: Why Instruments Sound Different}
+
+Even if two instruments play the same note (for example the same frequency), they do not sound the same.
+
+This difference is called the \textbf{timbre} (or sound quality).
+
+\paragraph{Explanation:}
+\begin{itemize}
+    \item Different instruments produce different combinations of harmonics
+    \item Some harmonics are stronger, others are weaker
+\end{itemize}
+
+\paragraph{Example:}
+\begin{itemize}
+    \item A flute produces almost only the fundamental frequency
+    \item A guitar produces many harmonics
+\end{itemize}
+
+This is why a guitar sounds richer than a flute, even if both play the same note.
+
+
+\section{Sound, Music and Mathematics}
+
+After learning about waves, we now want to understand how these ideas help us describe 
+\textbf{sound and music}. In particular, we will see how mathematical concepts such as 
+sine functions and superposition explain why musical instruments produce different sounds -- 
+and why a guitar sounds so different from a flute, even when playing the same note.
+
+\subsection{Fundamental Frequency and Harmonics}
+
+When a string -- for example on a guitar -- is plucked, it does not only oscillate as a whole. 
+Instead, it vibrates in \textbf{several different ways at the same time}. To understand this, 
+recall what we learned about standing waves: a string fixed at both ends can only form standing 
+waves at specific frequencies, namely those for which an integer number of half-wavelengths 
+fits exactly into the length of the string.
+
+\paragraph{The Fundamental Frequency}
+The simplest possible standing wave on a string has exactly \textbf{one antinode} in the middle 
+and nodes at both ends. This corresponds to $n = 1$, i.e.:
+\begin{equation}
+    l = \frac{\lambda_1}{2} \quad \Rightarrow \quad \lambda_1 = 2l
+\end{equation}
+Using the wave speed relation $c = \lambda \cdot f$, the corresponding frequency is:
+\begin{equation}
+    f_1 = \frac{c}{2l}
+\end{equation}
+This is called the \textbf{fundamental frequency}. It is the lowest frequency at which the 
+string can vibrate, and it determines the \textbf{pitch} of the tone we hear.
+
+\paragraph{Harmonics and Overtones}
+In addition to the fundamental, the string can also vibrate in smaller sections simultaneously. 
+For $n = 2$, two half-wavelengths fit into the string:
+\begin{equation}
+    l = \lambda_2 \quad \Rightarrow \quad f_2 = \frac{c}{l} = 2f_1
+\end{equation}
+For $n = 3$:
+\begin{equation}
+    f_3 = 3f_1
+\end{equation}
+In general, the allowed frequencies are:
+\begin{equation}
+    f_n = n \cdot f_1 \qquad n = 1, 2, 3, \dots
+\end{equation}
+These are called the \textbf{harmonics}. The harmonics above the fundamental ($n \geq 2$) 
+are also called \textbf{overtones}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|l|}
+\hline
+$n$ & Name & Frequency & Pattern on string \\
+\hline
+1 & Fundamental (1st harmonic) & $f_1$       & N---A---N \\
+2 & 2nd harmonic (1st overtone) & $2f_1$     & N-A-N-A-N \\
+3 & 3rd harmonic (2nd overtone) & $3f_1$     & N-A-N-A-N-A-N \\
+4 & 4th harmonic (3rd overtone) & $4f_1$     & N-A-N-A-N-A-N-A-N \\
+\hline
+\end{tabular}
+\caption{Harmonics of a string fixed at both ends (N = node, A = antinode)}
+\label{tab:harmonics}
+\end{table}
+
+\paragraph{Intuitive Explanation:}
+Imagine dividing the string into equal parts:
+\begin{itemize}
+    \item The string vibrates \textbf{as a whole} $\to$ fundamental frequency $f_1$
+    \item The string vibrates in \textbf{two halves} $\to$ second harmonic $2f_1$
+    \item The string vibrates in \textbf{three parts} $\to$ third harmonic $3f_1$
+    \item \ldots and so on
+\end{itemize}
+Each of these vibrations corresponds to a different sine wave with a different frequency. 
+Crucially, \textbf{all of these vibrations happen at the same time} when you pluck a string.
+
+\paragraph{Concrete Example: Guitar String}
+A guitar string has a length of $l = 65\,\text{cm} = 0.65\,\text{m}$. 
+The wave speed on the string is approximately $c = 286\,\frac{\text{m}}{\text{s}}$. 
+The fundamental frequency is then:
+\begin{equation}
+    f_1 = \frac{c}{2l} = \frac{286}{2 \cdot 0.65} \approx 220\,\text{Hz}
+\end{equation}
+This corresponds to the note A3. The harmonics are then at 
+$440\,\text{Hz}$ (A4), $660\,\text{Hz}$, $880\,\text{Hz}$ (A5), and so on.
+
+\subsection{Superposition of Waves and Sound}
+
+Since all harmonics are present at the same time, the actual motion of the string is a 
+\textbf{superposition} of many sine waves:
+\begin{equation}
+    y(x,t) = A_1 \sin(2\pi f_1 t) + A_2 \sin(2\pi f_2 t) + A_3 \sin(2\pi f_3 t) + \ldots
+\end{equation}
+Here, $A_1, A_2, A_3, \ldots$ are the \textbf{amplitudes} of the individual harmonics. 
+They describe how strongly each harmonic is present in the sound.
+
+\paragraph{Key Idea:}
+Any periodic sound can be written as a sum of sine and cosine functions. 
+This remarkable mathematical fact is known as \textbf{Fourier's theorem}, named after the 
+French mathematician Jean-Baptiste Joseph Fourier (1768--1830). It means that no matter how 
+complicated a sound wave looks, it can always be broken down into simple sine waves.
+
+This is why the sine function is so fundamental in acoustics: it is the 
+\textbf{basic building block} of all sounds.
+
+\paragraph{Visualising Superposition:}
+Consider two sine waves with frequencies $f_1$ and $2f_1$:
+\begin{align}
+    y_1(t) &= \sin(2\pi f_1 t) \\
+    y_2(t) &= \frac{1}{2}\sin(2\pi \cdot 2f_1 \cdot t)
+\end{align}
+Their sum $y_1 + y_2$ already produces a noticeably different wave shape -- 
+no longer a pure sine, but a more complex periodic curve. Adding more harmonics 
+makes the shape even richer. This is exactly what happens inside a musical instrument.
+
+\subsection{Timbre: Why Instruments Sound Different}
+
+Even if two instruments play the same note -- that is, the same fundamental frequency -- 
+they do not sound the same. A guitar sounds completely different from a flute, and a violin 
+sounds different from a piano. This difference in sound quality is called the \textbf{timbre} 
+(also called \textbf{sound colour} or \textbf{tone quality}).
+
+\paragraph{The Physical Explanation:}
+The timbre of an instrument is determined by \textbf{which harmonics are present} and 
+\textbf{how strong each harmonic is}. In other words, it is the specific combination of 
+amplitudes $A_1, A_2, A_3, \ldots$ that gives each instrument its characteristic sound.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{Instrument} & \textbf{Harmonic content} \\
+\hline
+Flute & 
+Almost only the fundamental frequency. Very few overtones are present, 
+which gives the flute its pure, smooth, and gentle sound. \\
+\hline
+Guitar & 
+Many harmonics are present with significant amplitudes. 
+This produces the rich, warm, and complex sound typical of a guitar. \\
+\hline
+Violin & 
+A strong fundamental with many overtones, especially the odd harmonics. 
+This creates the bright and sometimes piercing character of the violin. \\
+\hline
+Clarinet & 
+Primarily odd harmonics ($f_1, 3f_1, 5f_1, \ldots$), similar to a closed pipe. 
+This gives the clarinet its hollow, woody sound. \\
+\hline
+\end{tabular}
+\caption{Harmonic content of different instruments}
+\label{tab:timbre}
+\end{table}
+
+\paragraph{The Human Voice:}
+The same principle applies to the human voice. The vocal cords produce a fundamental frequency 
+(which determines the pitch), and the shape of the throat and mouth cavity selects and amplifies 
+certain harmonics. This is why every person's voice has a unique timbre -- and why trained 
+singers can consciously shape their vocal tract to produce a richer, more resonant sound.
+
+\paragraph{Summary:}
+\begin{itemize}
+    \item The \textbf{fundamental frequency} determines the pitch we hear
+    \item The \textbf{harmonics} are additional vibrations at integer multiples of the fundamental
+    \item The \textbf{amplitudes} of the harmonics determine the timbre of the sound
+    \item Any sound can be described as a \textbf{superposition of sine waves} -- 
+    this is the deep connection between mathematics and music
+\end{itemize}
+
+
+\section{Sound, Music and Mathematics}
+
+After learning about waves, we now want to understand how these ideas help us describe 
+\textbf{sound and music}. We will see why a guitar sounds so different from a flute -- 
+even when both play exactly the same note.
+
+\subsection{Fundamental Frequency and Harmonics}
+
+When you pluck a guitar string, it does not vibrate in just one way. 
+Instead -- as we saw in the previous chapter -- it forms \textbf{standing waves} at several 
+frequencies at the same time: the fundamental frequency $f_1$ and the harmonics 
+$2f_1,\ 3f_1,\ 4f_1, \ldots$ All of these vibrations happen simultaneously.
+
+But what does this mean for the sound we actually hear?
+
+\subsection{Superposition: How Vibrations Add Up}
+
+Since all harmonics are present at the same time, the actual motion of the string is a 
+\textbf{superposition} of many sine waves. Each harmonic contributes its own sine wave, 
+and they all add up to produce the final sound wave that travels through the air to our ears.
+
+\paragraph{A Simple Example:}
+Imagine the string vibrates with two sine waves at the same time:
+\begin{itemize}
+    \item the fundamental: a slow, large sine wave
+    \item the second harmonic: a faster sine wave with half the wavelength
+\end{itemize}
+When these two waves add up, the result is no longer a pure sine wave -- 
+it has a more complex shape. The more harmonics are added, the more complex the resulting 
+wave becomes. Figure \ref{img: superposition} illustrates this idea.
+
+%% insert figure showing superposition of harmonics here
+
+\paragraph{Key Idea:}
+\begin{center}
+    \textit{Any sound can be described as a sum of sine waves with different frequencies.}
+\end{center}
+This is why the sine function is so important in acoustics: 
+it is the \textbf{basic building block} of every sound.
+
+\subsection{Timbre: Why Instruments Sound Different}
+
+Now we can answer the central question: why does a guitar sound different from a flute, 
+even on the same note?
+
+The answer lies in the \textbf{amplitudes} of the harmonics -- that is, how strongly each 
+harmonic is present in the sound. This specific mixture of harmonics is what we call the 
+\textbf{timbre} (or sound colour) of an instrument.
+
+\paragraph{An Analogy:}
+Think of harmonics like ingredients in a recipe. Two cooks might use the same basic 
+ingredients, but in very different amounts -- and the result tastes completely different. 
+In the same way, two instruments might produce the same fundamental frequency, 
+but with a very different mix of harmonics -- and the result sounds completely different.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{Instrument} & \textbf{What the sound is made of} \\
+\hline
+Flute & 
+Almost only the fundamental frequency -- very few overtones. 
+This gives the flute its pure, soft, and smooth sound. \\
+\hline
+Guitar & 
+The fundamental plus many strong overtones. 
+This produces the rich, warm sound we associate with a guitar. \\
+\hline
+Clarinet & 
+Mainly odd harmonics ($f_1,\ 3f_1,\ 5f_1,\ \ldots$). 
+This gives the clarinet its characteristic hollow, woody sound. \\
+\hline
+\end{tabular}
+\caption{Harmonic content of different instruments}
+\label{tab:timbre}
+\end{table}
+
+\paragraph{Try it yourself:}
+Hum a note, then whistle the same note. The pitch is the same -- 
+but the sound is completely different. This is because humming produces many overtones, 
+while whistling produces almost none. You have just experienced timbre firsthand!
+
+\paragraph{The Human Voice:}
+The same principle applies to the human voice. The vocal cords produce a fundamental 
+frequency (which determines the pitch), and the shape of the throat and mouth selects 
+and amplifies certain harmonics. This is why every person's voice sounds unique -- 
+and why trained singers can consciously shape their sound to make it richer and more powerful.
+
+\paragraph{Summary:}
+\begin{itemize}
+    \item When an instrument plays a note, it produces the fundamental frequency 
+    \textbf{and} many harmonics at the same time
+    \item The resulting sound is a \textbf{superposition} of all these sine waves
+    \item The \textbf{amplitudes} of the harmonics determine the timbre -- 
+    the characteristic sound colour of each instrument
+    \item This is the deep connection between mathematics and music: 
+    \textbf{every sound is a sum of sine waves}
+\end{itemize}
+\section{Sound Production in Musical Instruments}
+
+\subsection{String Instruments}
+
+In string instruments (like guitars or violins), sound is produced by vibrating strings.
+
+Standing waves form on the string. The possible wavelengths are determined by the length of the string.
+
+\begin{equation}
+    l = \frac{n}{2}\lambda
+\end{equation}
+
+\begin{itemize}
+    \item $l$: length of the string
+    \item $\lambda$: wavelength
+\end{itemize}
+
+\paragraph{What affects the pitch?}
+\begin{itemize}
+    \item Length of the string (shorter $\Rightarrow$ higher pitch)
+    \item Tension of the string (higher tension $\Rightarrow$ higher pitch)
+    \item Mass of the string (lighter $\Rightarrow$ higher pitch)
+\end{itemize}
+
+\subsection{Wind Instruments}
+
+In wind instruments, sound is produced by vibrating air columns.
+
+Depending on whether the ends are open or closed, different standing waves can form.
+
+\paragraph{Important Idea:}
+The length of the air column determines which frequencies are possible.
+
+\subsection{Percussion Instruments}
+
+Percussion instruments (like drums) behave differently.
+
+They do not produce simple harmonic frequencies. Instead, their vibrations are more complex.
+
+This is why their sound is often less ``pure'' compared to string or wind instruments.
+
+\section{Tuning Systems in Music}
+
+\subsection{Frequency and Musical Notes}
+
+In music, each note corresponds to a certain frequency.
+
+A commonly used reference is:
+\begin{equation}
+    f_A = 440 \,\text{Hz}
+\end{equation}
+
+\subsection{Octaves}
+
+If we double a frequency, we get the same note one octave higher:
+\begin{equation}
+    f_{\text{octave}} = 2 \cdot f
+\end{equation}
+
+\paragraph{Important Idea:}
+Music is based on \textbf{ratios of frequencies}, not on absolute values.
+
+\subsection{Equal Temperament}
+
+In modern music, the octave is divided into 12 equal steps.
+
+Each step corresponds to multiplying the frequency by the same factor.
+
+\begin{equation}
+    f_n = f_0 \cdot 2^{\frac{n}{12}}
+\end{equation}
+
+\paragraph{Intuitive Explanation:}
+\begin{itemize}
+    \item Instead of using simple fractions, we divide the octave evenly
+    \item Each step sounds similar in size
+\end{itemize}
+
+\paragraph{Why is this useful?}
+It allows us to play in all keys without retuning the instrument.
+
+\paragraph{But:}
+The intervals are not perfectly ``pure'' anymore — this is a compromise.
+
+\section{Connection to Mathematics}
+
+We can now clearly see how mathematics, physics, and music are connected:
+
+\begin{itemize}
+    \item Sine and cosine functions describe waves
+    \item Superposition explains complex sounds
+    \item Exponential functions describe musical tuning
+\end{itemize}
+
+\paragraph{Final Insight:}
+Mathematics is not only abstract — it helps us understand and describe the sounds we hear every day.
+
+\section{Mathematical Concepts}
+\subsection{Trigonometry}
+
+
+\subsubsection{Degrees and Radians}
+Angles can be measured in two main units:
+\begin{itemize}
+    \item \textbf{Degrees}: A full circle consists of $360^\circ$
+    \item \textbf{Radians}: A full circle corresponds to $2\pi$
+\end{itemize}
+
+The conversion between both units is given by:
+\begin{equation}
+    360^\circ = 2\pi \quad \Rightarrow \quad 1^\circ = \frac{\pi}{180}
+\end{equation}
+
+This means that you can either describe an angle by its number of degrees or just by a number in Radians.  Angles are measured counterclockwise. 
+Radians are especially important in higher mathematics because they simplify many formulas.
+
+\subsubsection{Unit Circle}
+The unit circle is a circle with radius 1 centered at the origin. It is used to define trigonometric functions for all angles and to visualize their values.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Bilder/unit_circle.png}
+    \caption{Unit Circle}
+    \label{fig:unit_circle}
+%Quelle : https://www.govst.edu/uploadedFiles/Academics/Colleges_and_Programs/CAS/Trigonometry_Short_Course_Tutorial_Lauren_Johnson.pdf%
+\end{figure}
+The following applies to all points that lie on the unit circle: 
+
+\begin{equation}
+    x^2 + y^2 = 1
+\end{equation}
+
+\subsubsection{Trigonometric Functions}
+
+Trigonometric functions describe relationships between angles and side lengths in right-angled triangles. So we now consider right-angled triangles. The side opposite to the right-angle is called hypothenuse. If the length of the hypothenuse is called $c$ and the lengths of the two legs is given by $a$ and $b$, Pythagoras Theorem states that: 
+\begin{equation}
+    a^2+b^2=c^2.
+\end{equation}
+When considering an angle in a right triangle, the side of the triangle that touches the angle is called the adjacent side. The remaining third side is called opposite side. So, the length of hypothenuse, opposite and adjacent side define a right triangle. 
+%Bild mit Hypothenuse, Gegen- und Ankathete, Bilder ähnlicherb Dreiecke%
+We now consider similar right-angled triangles. Similar triangles have equal angles but different side lengths.
+We now observe that the ratio of the side lengths is the same for similar triangles. So for a certain angle $\alpha $, the following fundamental ratios are defined. 
+\begin{itemize}
+    \item $\sin(\alpha) = \frac{\text{opposite}}{\text{hypotenuse}}$
+    \item $\cos(\alpha) = \frac{\text{adjacent}}{\text{hypotenuse}}$
+    \item $\tan(\alpha) = \frac{\text{opposite}}{\text{adjacent}}$
+\end{itemize}
+You can now also think of these equations as functions, where alpha is the variable. This means that, for a given angle, you are asking for the ratios of the side lengths of the corresponding right triangle. 
+Trigonometric functions can be used to:
+\begin{itemize}
+    \item calculate missing side lengths
+    \item determine unknown angles
+\end{itemize}
+
+To determine the values of $\sin(\alpha)$ and $\cos(\alpha)$ the unit circle can also be used. :
+
+As you already komw, the  unit circle is a circle with radius $1$ centered at the origin. An angle $\alpha$ is measured from the positive x-axis and corresponds to a certain point on the unit circle. To find the corresponding point on the circle, imagine rotating a radius of length 1 by the angle $\theta$. The endpoint of this radius lies on the circle and has coordinates $(x,y)$.
+
+This construction forms a right triangle:
+\begin{itemize}
+    \item the hypotenuse is the radius $r=1$
+    \item the horizontal side has length $x$
+    \item the vertical side has length $y$
+\end{itemize}
+
+Using the definitions of trigonometric functions in a right triangl, one obtains:
+\begin{equation}
+    \cos(\alpha) = \frac{\text{adjacent}}{\text{hypotenuse}} = x
+\end{equation}
+\begin{equation}
+    \sin(\alpha) = \frac{\text{opposite}}{\text{hypotenuse}} = y
+\end{equation}
+
+Thus, the point on the unit circle corresponding to the angle $\alpha$ is described by the coordinates: $(\sin(\alpha), \cos(\alpha))$. 
+So for $\slpha = 45^\circ$, the triangle is isosceles, so both legs are equal. Considering the unit circle, one can easily determine $\sin(\alpha)$ and $\cos(\alpha)$:
+\begin{equation}
+    \cos(45^\circ) = \sin(45^\circ) = \frac{\sqrt{2}}{2}
+\end{equation}
+
+\paragraph{Periodicity:}
+The periodicity of sine and cosine function follows directly from the geometry of the unit circle. After a full rotation of $360^\circ$ (or $2\pi$ radians), the same  triangle is  created , and thus the point on the circle is identical. So, sine and cosine are periodic functions with a period of  $360^\circ$ (or $2\pi$ radians). 
+In a more formal way, this is written as follows :
+\begin{equation}
+    \sin(\alpha + 2\pi) = \sin(\alpha), \quad \cos(\alpha + 2\pi) = \cos(\alpha)
+\end{equation}
+
+Another important identity is:
+\begin{equation}
+    \sin^2(x) + \cos^2(x) = 1
+\end{equation}
+This follows from the unit circle aswell. The right triangles that are considered show the side lengths of sine and cosine while the length of the hypothenuse is 1. Thus, the identity is derived using this characteristics and Pythagoras Theorem.  
+
+
+
+
+\subsubsection{Graphs of Trigonometric Functions}
+
+Trigonometric functions can also be represented graphically.
+As we saw in the last section, sine and cosine function are periodic with a period of $2\pi$. 
+\paragraph{Sine function}
+%Bild einer Sinus-Fkt. einfügen%
+When plotting the sine function we get to know more properties of it: 
+
+\begin{itemize}
+    \item \textbf{Domain \footnote{all possible input values (what you can plug into the function)}}: $(-\infty, \infty)$  
+    This means you can insert any real number into the function.
+
+    \item \textbf{Range \footnote{all possible output values (what comes out of the function)}}: $[-1,1]$  
+    The output values of the sine function are always between $-1$ and $1$.
+
+    \item \textbf{x-intercepts \footnote{points where the graph touches or crosses the x-axis}}: $x = n\pi$, where $n \in \mathbb{Z}$  
+    These are the points where the graph crosses the x-axis (i.e., where $\sin(x)=0$).
+    \item \textbf{Periodicity}:  
+    The sine function repeats itself every $2\pi$:
+    \begin{equation}
+        \sin(x + 2\pi) = \sin(x)
+    \end{equation}
+    \item \textbf{Odd function}:  
+    The sine function is symmetric with respect to the origin. This means:
+    \begin{equation}
+        \sin(-x) = -\sin(x)
+    \end{equation}
+
+\end{itemize}
+
+
+
+\paragraph{Cosine Function}
+%P=lot von Cosinus einfügen %
+When plotting the cosine function one observes similar properties:
+
+\begin{itemize}
+    \item \textbf{Domain}: $(-\infty, \infty)$  
+    Any real number can be used as input.
+
+    \item \textbf{Range}: $[-1,1]$  
+    The values always stay between $-1$ and $1$.
+
+    \item \textbf{Periodicity}:  
+    The cosine function also repeats every $2\pi$:
+    \begin{equation}
+        \cos(x + 2\pi) = \cos(x)
+    \end{equation}
+    \item \textbf{Even function}:  
+    The cosine function is symmetric with respect to the y-axis. This means:
+    \begin{equation}
+        \cos(-x) = \cos(x)
+    \end{equation}
+
+\end{itemize}
+
+\paragraph{Explanation of Even and Odd Functions:}
+\begin{itemize}
+    \item \textbf{Even function}: The graph looks the same on the left and right side (mirror symmetry at the y-axis)
+    \item \textbf{Odd function}: The graph looks the same after rotating it by $180^\circ$ around the origin
+\end{itemize}
+Both sine and cosine functions are periodic and oscillate between $-1$ and $1$. This makes them especially useful for describing waves and oscillations in physics.
+
+\subsubsection{Transformations of Sine and Cosine Functions}
+
+Sine and cosine functions can be modified using parameters. The general form of such a function is:
+
+\begin{equation}
+    f(x) = a \cdot \sin(bx + c) + d \quad \text{or} \quad f(x) = a \cdot \cos(bx + c) + d
+\end{equation}
+
+Each parameter changes the graph in a specific way:
+
+\begin{itemize}
+    \item \textbf{Amplitude ($a$):}  
+    The amplitude describes how ``tall'' the wave is. It tells you the maximum distance from the middle line (equilibrium).
+    \begin{itemize}
+        \item $|a| > 1$: the graph is stretched (bigger peaks)
+        \item $0 < |a| < 1$: the graph is compressed (smaller peaks)
+        \item $a < 0$: the graph is reflected across the x-axis
+    \end{itemize}
+
+    \item \textbf{Period ($b$):}  
+    The parameter $b$ changes how long one full wave lasts.
+    The period $T$ is given by:
+    \begin{equation}
+        T = \frac{2\pi}{b}
+    \end{equation}
+    \begin{itemize}
+        \item $b > 1$: the wave is compressed (repeats faster)
+        \item $0 < b < 1$: the wave is stretched (repeats slower)
+    \end{itemize}
+
+    \item \textbf{Phase shift ($c$):}  
+    The phase shift moves the graph left or right.
+    \begin{equation}
+        \text{shift} = -\frac{c}{b}
+    \end{equation}
+    \begin{itemize}
+        \item shift to the right if $c < 0$
+        \item shift to the left if $c > 0$
+    \end{itemize}
+
+    \item \textbf{Vertical shift ($d$):}  
+    The parameter $d$ moves the whole graph up or down.
+    \begin{itemize}
+        \item $d > 0$: graph shifts upward
+        \item $d < 0$: graph shifts downward
+    \end{itemize}
+\end{itemize}
+
+\paragraph{How to think about it :}
+\begin{itemize}
+    \item The \textbf{amplitude} tells you how strong the oscillation is.
+    \item The \textbf{period} tells you how long it takes until the wave repeats.
+    \item The \textbf{phase shift} tells you where the wave starts.
+    \item The \textbf{vertical shift} moves the whole wave up or down.
+\end{itemize}
+
+\subsubsection{Relationship Between Sine and Cosine}
+
+The sine and cosine functions are closely related and can be transformed into each other by a simple horizontal shift. In fact, they describe the same type of oscillation, but start at different points.
+
+The relationship is given by:
+\begin{equation}
+    \cos(x) = \sin\left(x + \frac{\pi}{2}\right)
+\end{equation}
+\begin{equation}
+    \sin(x) = \cos\left(x - \frac{\pi}{2}\right)
+\end{equation}
+
+This means that the cosine function is just the sine function shifted to the left by $\frac{\pi}{2}$ (a quarter of a full period), and vice versa.
+
+\paragraph{How to think about it :}
+\begin{itemize}
+    \item Both functions describe the same wave shape.
+    \item The only difference is where the wave starts.
+    \item A shift of $\frac{\pi}{2}$ moves the starting point from a maximum (cosine) to a zero crossing (sine).
+\end{itemize}
+
+\paragraph{Summary:}
+By changing the parameters $a$, $b$, $c$, and $d$, we can model many different types of waves and oscillations. This is especially important in physics, for example when describing sound waves or vibrations.
+
+
+\subsection{Exponential Functions and Logarithms}
+
+Exponential functions and logarithms play a central role in mathematics and physics. They are especially important when describing processes that grow or decay over time, such as sound intensity, population growth, or radioactive decay.
+
+\subsubsection{Exponential Functions}
+
+Exponential functions describe processes in which a quantity changes by a constant \textbf{percentage} rather than a constant amount. This is a key difference from linear functions. This means: the bigger the quantity already is, the faster it grows (or decays).
+
+A linear function changes by adding the same amount each step:
+\begin{equation}
+    y = mx + b
+\end{equation}
+
+An exponential function changes by multiplying with the same factor each step:
+\begin{equation}
+    f(x) = a \cdot b^x
+\end{equation}
+
+\begin{itemize}
+    \item $a$: initial value (starting amount)
+    \item $b$: growth factor (multiplication factor per step)
+\end{itemize}
+
+\subsubsubection{Growth Factor and Percent Change}
+
+The growth factor $b$ describes how much a quantity changes per step:
+\begin{itemize}
+    \item $b > 1$: exponential growth ($f(x)$ increases with increasing $x$ )
+    \item $0 < b < 1$: exponential decay ($f(x)$ decreases with increasing $x$ )
+\end{itemize}
+
+\subsubsubection{Graphs of Exponential Functions}
+%Plots von E-Funktionen einfügen%
+When considering the graph of an exponential function one observes the following properties:
+
+\begin{itemize}
+    \item The graph is a smooth curve (not a straight line as e.g. a linear function)
+    \item It is always above the x-axis (for $a > 0$)
+    \item It has a \textbf{horizontal asymptote}
+\end{itemize}
+
+\paragraph{Horizontal Asymptote:} \\  
+A horizontal asymptote is a line that the graph approaches but never reaches. Considering an exponential growth, the graph approches $y=0$ for $x \rightarrow -\infty$. So, with dexreasing $x$, the graph gets closer and closer to zero but never reaches the $x-$axis.
+
+
+
+\paragraph{Long-Term Behavior} \\  
+\begin{itemize}
+    \item For exponential growth ($b>1$): $f(x) \to \infty$ as $x \to \infty$, $f(x) \to 0$ as $x \to - \infty$, 
+    \item For exponential  decay ($0<b<1$): $f(x) \to 0$ as $x \to \infty$ 
+\end{itemize}
+
+\subsubsubsection{Euler's number $e$}
+Euler's number, denoted as $e$, is one of the non-terminating constants we often use in mathematics and science. Another non-terminating constant you might already know is $\pi$ which is often used in geometry.
+Euler’s number approximately equals 2.71828. You also obtain $e$ when calculating the following term for very large numbers $n$: 
+\begin{align}
+    e \approx  \left( 1+ \frac{1}{n} \right)^n
+\end{align}
+With increasing $n$ the term approches $e$ as you can see in the following table: 
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+$n$ & $\left(1 + \frac{1}{n}\right)^n$ \\
+\hline
+1      & 2{.}000000 \\
+2      & 2{.}250000 \\
+5      & 2{.}488320 \\
+10     & 2{.}593742 \\
+100    & 2{.}704814 \\
+1000   & 2{.}716924 \\
+10000  & 2{.}718146 \\
+100000 & 2{.}718268 \\
+\hline
+$\infty$ & $e \approx 2{.}718282\ldots$ \\
+\hline
+\end{tabular}
+\caption{approximation of Euler's number $e$ as $n$ increases}
+\label{tab:euler}
+\end{table}
+Euler’s number helps mathematicians, physicists and other scientists explain exponential growth in various phenomena, from population to radioactive decay. So, euler's number $e$ often becomes the growth factor when describing natural phenomena. The following function is thus very important in math and physics: 
+\begin{align}
+    f(x) = a \cdot e^x
+\end{align}
+
+
+
+
+\subsubsubsection{Transformations of Exponential Functions}
+
+Similar to sine and cosine functions, exponential functions can also be changed using different parameters. These parameters allow us to adjust the shape and position of the graph.
+
+The general form is:
+\begin{equation}
+    f(x) = a \cdot b^{k(x-c)} + d
+\end{equation}
+
+Each parameter has a clear effect on the graph:
+
+\begin{itemize}
+    \item \textbf{Parameter $a$ (vertical scaling):}  
+    This parameter stretches or compresses the graph vertically.
+    \begin{itemize}
+        \item $a > 1$: the graph becomes steeper (grows faster visually)
+        \item $0 < a < 1$: the graph becomes flatter
+        \item $a < 0$: the graph is flipped upside down (reflection at the x-axis)
+    \end{itemize}
+
+    \item \textbf{Parameter $k$ (growth speed):}  
+    This parameter controls how fast the function grows or decays.
+    \begin{itemize}
+        \item larger $k$: faster growth or decay
+        \item smaller $k$: slower change
+    \end{itemize}
+    You can think of $k$ as controlling how ``quickly'' the curve rises or falls.
+
+    \item \textbf{Parameter $c$ (horizontal shift):}  
+    This moves the graph left or right.
+    \begin{itemize}
+        \item shift to the right if $c > 0$
+        \item shift to the left if $c < 0$
+    \end{itemize}
+    This means the function starts growing earlier or later.
+
+    \item \textbf{Parameter $d$ (vertical shift):}  
+    This moves the entire graph up or down.
+    \begin{itemize}
+        \item $d > 0$: graph moves up
+        \item $d < 0$: graph moves down
+    \end{itemize}
+\end{itemize}
+
+
+By changing these parameters, we can adapt exponential functions to model many real-world processes, such as population growth or decay processes in physics.
+
+
+\subsubsection{Logarithms}
+
+The logarithm is the inverse operation of an exponential function. While an exponential function answers the question
+
+\begin{center}
+    \textit{``What is the result if we raise a number to a certain power?''}
+\end{center}
+
+the logarithm answers the reverse question:
+
+\begin{center}
+    \textit{``To which power must we raise a number to obtain a given result?''}
+\end{center}
+
+Mathematically, this relationship is written as:
+\begin{equation}
+    b^x = y \quad \Longleftrightarrow \quad \log_b(y) = x
+\end{equation}
+
+Here:
+\begin{itemize}
+    \item $b$ is the base
+    \item $x$ is the exponent
+    \item $y$ is the result
+\end{itemize}
+
+\paragraph{Example:}
+\begin{equation}
+    2^3 = 8 \quad \Longleftrightarrow \quad \log_2(8) = 3
+\end{equation}
+
+\paragraph{Intuitive Explanation:}
+\begin{itemize}
+    \item Exponential function: you start with a number and calculate the result
+    \item Logarithm: you are given the result and want to find the exponent
+\end{itemize}
+
+\paragraph{Important Notes:}
+\begin{itemize}
+    \item Logarithms are only defined for positive numbers ($y > 0$)
+    \item The base must be positive and not equal to 1
+\end{itemize}
+
+\paragraph{Summary:}
+The logarithm is a tool that helps us ``undo'' exponential growth. It is especially useful when we want to solve equations where the unknown is in the exponent.
+
+
+\subsubsection{Natural Logarithm}
+
+The logarithm with base $e$ is called the natural logarithm and denoted by $\ln$:
+\begin{equation}
+     log_e (y) = \ln(y)
+\end{equation}
+
+
+So the natural logarithm answers the question:
+\begin{center}
+    \textit{``To which power must we raise $e$ to get a certain number?''}
+\end{center}
+
+
+\subsubsubsection{Inverse Relationship}
+
+Exponential and logarithmic functions undo each other:
+\begin{equation}
+    e^{\ln(x)} = x
+\end{equation}
+\begin{equation}
+    \ln(e^x) = x
+\end{equation}
+
+%Plots von ln und e-Fkt einfügen%
+
+From the graphs, we can also see that the natural logarithm function and the exponential function cancel each other out. This means they are \textbf{inverse functions}.
+
+Geometrically, this relationship can be observed by the fact that their graphs are mirror images of each other along the line
+\begin{equation}
+    y = x
+\end{equation}
+which is also called the angle bisector.
+
+\paragraph{Intuitive Explanation:}
+\begin{itemize}
+    \item The exponential function $e^x$ takes an input $x$ and produces a value
+    \item The logarithm $\ln(x)$ takes this value and returns the original input $x$
+\end{itemize}
+
+So applying one function after the other brings you back to where you started:
+\begin{equation}
+    \ln(e^x) = x \quad \text{and} \quad e^{\ln(x)} = x
+\end{equation}
+
+\subsubsection{Summary}
+
+\begin{itemize}
+    \item Exponential functions describe growth and decay processes
+    \item The number $e$ is fundamental for natural growth
+    \item Logarithms are the inverse of exponential functions
+    \item Both concepts are essential for modeling real-world phenomena
+\end{itemize}
+
+
+\end{document}
