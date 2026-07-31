@@ -18,8 +18,9 @@
 \usepackage{verbatim}
 \usepackage{pdfpages}
 \usepackage{caption}
-\captionsetup[figure]{labelfont=footnotesize}
+%%\captionsetup[figure]{labelfont=footnotesize}
 \usepackage{hyperref}
+\usepackage{parskip}
 
 %% neu
 \usepackage{physics}
@@ -27,7 +28,7 @@
 \usepackage{fancyhdr} %% for header and footer
 \usepackage[a4paper, left=2.5cm, right=2.5cm, top=2cm]{geometry}
 \usepackage{graphicx} % Required for inserting images
-\usepackage[ngerman]{babel}
+%\usepackage[ngerman]{babel}
 \usepackage{csquotes}
 \MakeOuterQuote{"}
 
@@ -45,7 +46,8 @@
 
 \end{figure}
 \newpage
-\tableofcontents \newpage  
+\tableofcontents
+\newpage  
 \section{Basic Concepts of Acoustics}
 Since we want to take a closer look at the origin of noises, sounds, and music at the Junior Academy, we will first familiarize ourselves with the basic concepts of acoustics. The field of acoustics primarily deals with the \textbf{study of sound} and its propagation. There are three main branches of acoustics:
 \begin{itemize}
@@ -67,26 +69,47 @@ The physical concept of sound (timbre) corresponds roughly to what is commonly r
 \section{Oscillations and Waves}
 As you have probably noticed, oscillations and waves play a major role in acoustics (and in many other areas of physics). To gain a better understanding, we will now examine the mathematical foundations and physical concepts in more detail.
 
-\subsection{Oscillations}
-In physics, an oscillation is a periodic variation of a system's state variables over time. For example, imagine an object attached to a spring. If you push the object, it starts to oscillate and moves up and down repeatedly. The quantity that changes is the distance from its equilibrium position. This distance is called the \textbf{displacement}. 
+\subsection{The harmonic oscillator}
+In physics, an oscillation is a periodic variation of a system's state variables over time. Periodic means that after some fixed time $T$, the \textbf{period}, the system's state repeats. For example, picture a swing set at the playground. Its back-and-forth movement is \textit{periodic}.
 
-We will mainly consider periodic, harmonic oscillations. These are oscillations where the system returns to its initial state after the same time interval $T$. This time is called the \textbf{period}. Any harmonic oscillation can be described by a sine function. The maximum displacement from the equilibrium position is called the \textbf{amplitude}. A system performing harmonic oscillations is called a \textbf{harmonic oscillator}.
+A prototypical system that exhibits periodic behavior is the harmonic oscillator. Picture a spring hanging down from the ceiling with a mass attached to its bottom half. If you don't touch it, it stays in its so-called \textit{equilibrium state}. Now imagine you pull down the mass a little and then let it go. The mass will move up, through its equilibrium position and then some, slow down, and move down again. It will continue moving up and down, the movement becoming smaller and smaller, until it comes to rest once again in its equilibrium position.
+
+Why does this happen? Well, it takes a force to pull down the spring, because the spring exerts a force pointing back to the equilibrium position. This is what forces the mass to go up when it is below the equilibrium position, and forces it to go down when it is above it. The force always tries to restore the system to its equilibrium state. It is proportional to the distance to its equilibrium position, which is called the \textbf{displacement}.
+This proportionality is what makes the oscillator \textit{harmonic}.
+
+The maximum displacement from the equilibrium position is called the \textbf{amplitude}. Interestingly, the \textbf{Period} does not depend on the amplitude! That's one of the things that make the harmonic oscillator special.
+A perfect, frictionless harmonic oscillator would keep oscillating forever. When we talk about harmonic oscillators, we'll usually mean this idealized version of it. Reality, of course, is more complicated. The reason a real spring stops swinging after a while is because the system loses energy to the friction with the air and the spring being heated by repeated deformations. 
+
+Now, what does this have to do with sound waves? The reason the harmonic oscillator is the physicist's favorite toy-model is its versatility. Wherever a system oscillates, it can be approximated to the first order\footnote{That means for reasonably small displacements, it's a ``good'' approximation.} as a harmonic oscillator. This applies for example to a pendulum, or the swing set we talked about earlier. Here, the restoring force isn't directly proportional to the displacement, but as an approximation, we can pretend it is --- and get fairly good predictions for the period $T$, for example.
+
+For sound, it's the pressure and density of the air that are changing periodically. The restoring force for a specific parcel of air comes, in this case, from interaction with its neighbors. A parcel of higher pressure will try to expand and lower its pressure to the ambient pressure. A parcel of lower pressure will be compressed by its neighboring parcels to get it to ambient pressure. We'll talk about this in more detail later, but as one of my physics professors once said: ``The whole world is made up of harmonic oscillators.'' \footnote{That's a hyperbole, of course, but you'd be surprised how far you can go with this relatively simple model.}
 
 \subsubsection{Mathematical Description: Trigonometric Functions}
 
-Trigonometric functions describe the relationship between angles and ratios of sides in triangles (originally right-angled triangles). They are fundamental for describing oscillations and waves.
+Trigonometric functions describe the relationship between angles and ratios of sides in triangles (originally right-angled triangles). They are fundamental for describing oscillations. One of the reasons why this is the case is because they are periodic, just like the oscillations we want to describe with them.
 
 \paragraph{Definition of the Sine and Cosine Function}
+
+The most important trigonometric functions are sine and cosine. They are special ratios of the side lengths in a right-angled triangle.
 In a right triangle, the sine of an angle $\alpha$ is defined as:
 \begin{align}
     \sin(\alpha) = \frac{\text{opposite }}{\text{hypotenuse}} \\  
     \cos(\alpha) = \frac{\text{adjacent}}{\text{hypotenuse}}
 \end{align}
 
+\paragraph{Radians and degrees}
+Before we continue our investigation of Sine and Cosine, we need to talk about angles, as they play a prominent role in the trigonometric functions.
 
-If we now interpret the angle as a variable $x$ (in radians) and plot $\sin(x)$, we obtain the sine function, which describes periodic motion (see Fig. \ref{img:sinusfunktion}).
+There are two units in which you can state the value of an angle, degrees and radians. From school, you're probably already familiar with degrees, where a right angle corresponds to $90$ degrees, and a full circle corresponds to $360$ degrees. In this course, we'll use a radians, because this makes notation a bit easier. In radians, a right angle corresponds to $\pi/2$, and a full circle to $2\pi$. Thirty degrees are the same thing as $\pi/6$ radians, sixty degrees are the same as $\pi/3$ radians, etc. You can convert from degrees to radians by multiplying with $\pi/180$. 
 
-\paragraph{radians }
+The reason we choose $2\pi$ to be the value for the full circle is because the diameter of a circle is $2\pi$ times its  radius. So if you have a circle (let's say a circular cake) with radius one, and you cut out a piece with an angle of $\alpha$, the value of $\alpha$ will be exactly the length of the piece of crust on your piece. Neat, right?
+
+\paragraph{Visualizing sine and cosine}
+To get an idea what the Sine function actually looks like, we plot $\sin(x)$ as a function of the angle $x$ in radians.
+
+As you can see in Fig. \ref{img:sinusfunktion}, the Sine function repeats after a period of $2\pi$. It is precisely this periodicity that makes it useful for describing oscillations.
+
+
 \paragraph{General Form of Harmonic Oscillations}
 
 \begin{figure}[!ht]
