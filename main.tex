@@ -14,7 +14,7 @@
 \usepackage{tikz-cd}
 \usetikzlibrary{cd}
 \usepackage{dirtytalk}
-
+\usepackage{titlesec}
 \usepackage{verbatim}
 \usepackage{pdfpages}
 \usepackage{caption}
@@ -57,7 +57,7 @@ In the following, we will mainly focus on physical acoustics.
 
 \subsection{Sound}
 In science, the term ``sound'' describes mechanical vibrations in an elastic medium (e.g., air or water). You may also have heard the term ``sound wave.'' You can imagine a \textbf{sound wave} similarly to a wave in water. When air particles move, i.e., oscillate back and forth, they transfer their motion to neighboring air particles. This \textbf{motion of air particles}, however, is not visible in contrast to water waves. Later, we will take a closer look at sound waves.
-
+ 
 \subsection{Tone}
 You are probably familiar with the term tone as a ``sound event'' produced by a musical instrument or the human voice. From a physical perspective, a tone is determined by the frequency of a harmonic sound wave. The frequency indicates how many oscillations the air particles perform per second and is therefore crucial for which tone you perceive. A tone with a higher frequency is perceived as a ``higher'' tone. Thus, the physical concept of tone describes what you likely know as \textbf{pitch}.
 
@@ -84,7 +84,7 @@ In a right triangle, the sine of an angle $\alpha$ is defined as:
 \end{align}
 
 
-If we now interpret the angle as a variable $x$ (in radians) and plot $\sin(x)$, we obtain the sine function, which describes periodic motion (see \autoref{img:sinusfunktion}).
+If we now interpret the angle as a variable $x$ (in radians) and plot $\sin(x)$, we obtain the sine function, which describes periodic motion (see Fig. \ref{img:sinusfunktion}).
 
 \paragraph{radians }
 \paragraph{General Form of Harmonic Oscillations}
@@ -297,8 +297,8 @@ Figure \ref{img: stehende Welle} shows a standing wave at different moments in t
     \label{img: stehende Welle}
 \end{figure}
 
-\paragraph{Harmonics -- At Which Frequencies Do Standing Waves Occur?} \\  
-Standing waves can only form at specific frequencies. These depend on the \textbf{length of the medium} (e.g.\ a string or a air column) and on the \textbf{boundary conditions} -- that is, what happens at the ends of the medium. We distinguish three important cases:
+\paragraph{Harmonics -- At Which Frequencies Do Standing Waves Occur?}
+Standing waves can only form at specific frequencies. These depend on the \textbf{length of the medium} (e.g. a string or a air column) and on the \textbf{boundary conditions} -- that is, what happens at the ends of the medium. We distinguish three important cases:
 
 \subparagraph{Case 1: One Fixed End, One Free End}
 
@@ -351,7 +351,7 @@ The longer the test tube, the longer the wavelength -- and the lower the pitch.
 This is why filling the test tube with water (and thus shortening the air column) produces a higher tone.
 Only odd harmonics are present in this system, giving it a characteristic hollow sound.
 
-\subparagraph{Case 2: Two Fixed Ends}\\   
+\subparagraph{Case 2: Two Fixed Ends} 
 
 Both ends are fixed and thus nodes. \\ 
 \textit{Example:} A \textbf{string fixed at both ends}, such as a guitar or violin string 
@@ -403,7 +403,9 @@ the standing wave pattern on the medium looks different. The key difference lies
 \textit{how many half-wavelengths fit into the medium} -- but the boundary conditions 
 tell you \textit{where exactly the wave starts and ends}. 
 
-\paragraph{Summary: Boundary Conditions and Their Effects} \\  
+\paragraph{Summary: Boundary Conditions and Their Effects}
+
+\begin{comment}
 
 
 \begin{figure}
@@ -412,6 +414,8 @@ tell you \textit{where exactly the wave starts and ends}.
     \caption{Caption}
     \label{fig:placeholder}
 \end{figure}
+\end{comment}
+
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|c|c|l|}
@@ -934,7 +938,7 @@ Using the definitions of trigonometric functions in a right triangl, one obtains
 \end{equation}
 
 Thus, the point on the unit circle corresponding to the angle $\alpha$ is described by the coordinates: $(\sin(\alpha), \cos(\alpha))$. 
-So for $\slpha = 45^\circ$, the triangle is isosceles, so both legs are equal. Considering the unit circle, one can easily determine $\sin(\alpha)$ and $\cos(\alpha)$:
+So for $\alpha = 45^\circ$, the triangle is isosceles, so both legs are equal. Considering the unit circle, one can easily determine $\sin(\alpha)$ and $\cos(\alpha)$:
 \begin{equation}
     \cos(45^\circ) = \sin(45^\circ) = \frac{\sqrt{2}}{2}
 \end{equation}
@@ -1122,7 +1126,7 @@ An exponential function changes by multiplying with the same factor each step:
     \item $b$: growth factor (multiplication factor per step)
 \end{itemize}
 
-\subsubsubection{Growth Factor and Percent Change}
+\paragraph{Growth Factor and Percent Change}
 
 The growth factor $b$ describes how much a quantity changes per step:
 \begin{itemize}
@@ -1130,7 +1134,7 @@ The growth factor $b$ describes how much a quantity changes per step:
     \item $0 < b < 1$: exponential decay ($f(x)$ decreases with increasing $x$ )
 \end{itemize}
 
-\subsubsubection{Graphs of Exponential Functions}
+\paragraph{Graphs of Exponential Functions}
 %Plots von E-Funktionen einfügen%
 When considering the graph of an exponential function one observes the following properties:
 
@@ -1140,18 +1144,18 @@ When considering the graph of an exponential function one observes the following
     \item It has a \textbf{horizontal asymptote}
 \end{itemize}
 
-\paragraph{Horizontal Asymptote:} \\  
+\paragraph{Horizontal Asymptote:} 
 A horizontal asymptote is a line that the graph approaches but never reaches. Considering an exponential growth, the graph approches $y=0$ for $x \rightarrow -\infty$. So, with dexreasing $x$, the graph gets closer and closer to zero but never reaches the $x-$axis.
 
 
 
-\paragraph{Long-Term Behavior} \\  
+\paragraph{Long-Term Behavior}
 \begin{itemize}
     \item For exponential growth ($b>1$): $f(x) \to \infty$ as $x \to \infty$, $f(x) \to 0$ as $x \to - \infty$, 
     \item For exponential  decay ($0<b<1$): $f(x) \to 0$ as $x \to \infty$ 
 \end{itemize}
 
-\subsubsubsection{Euler's number $e$}
+\paragraph{Euler's number $e$}
 Euler's number, denoted as $e$, is one of the non-terminating constants we often use in mathematics and science. Another non-terminating constant you might already know is $\pi$ which is often used in geometry.
 Euler’s number approximately equals 2.71828. You also obtain $e$ when calculating the following term for very large numbers $n$: 
 \begin{align}
@@ -1187,7 +1191,7 @@ Euler’s number helps mathematicians, physicists and other scientists explain e
 
 
 
-\subsubsubsection{Transformations of Exponential Functions}
+\paragraph{Transformations of Exponential Functions}
 
 Similar to sine and cosine functions, exponential functions can also be changed using different parameters. These parameters allow us to adjust the shape and position of the graph.
 
@@ -1296,7 +1300,7 @@ So the natural logarithm answers the question:
 \end{center}
 
 
-\subsubsubsection{Inverse Relationship}
+\paragraph{Inverse Relationship}
 
 Exponential and logarithmic functions undo each other:
 \begin{equation}
