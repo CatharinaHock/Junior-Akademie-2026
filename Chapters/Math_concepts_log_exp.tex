@@ -1,0 +1,236 @@
+\section{Exponential Functions and Logarithms}
+
+Exponential functions and logarithms play a central role in mathematics and physics. They are especially important when describing processes that grow or decay over time, such as sound intensity, population growth, or radioactive decay.
+
+\subsection{Exponential Functions}
+
+Exponential functions describe processes in which a quantity changes by a constant \textbf{percentage} rather than a constant amount. This is a key difference from linear functions. This means: the bigger the quantity already is, the faster it grows (or decays).
+
+A linear function changes by adding the same amount each step:
+\begin{equation}
+    y = mx + b
+\end{equation}
+
+An exponential function changes by multiplying with the same factor each step:
+\begin{equation}
+    f(x) = a \cdot b^x
+\end{equation}
+
+\begin{itemize}
+    \item $a$: initial value (starting amount)
+    \item $b$: growth factor (multiplication factor per step)
+\end{itemize}
+
+\paragraph{Growth Factor and Percent Change}
+
+The growth factor $b$ describes how much a quantity changes per step:
+\begin{itemize}
+    \item $b > 1$: exponential growth ($f(x)$ increases with increasing $x$ )
+    \item $0 < b < 1$: exponential decay ($f(x)$ decreases with increasing $x$ )
+\end{itemize}
+
+\paragraph{Graphs of Exponential Functions}
+%Plots von E-Funktionen einfügen%
+When considering the graph of an exponential function one observes the following properties:
+
+\begin{itemize}
+    \item The graph is a smooth curve (not a straight line as e.g. a linear function)
+    \item It is always above the x-axis (for $a > 0$)
+    \item It has a \textbf{horizontal asymptote}
+\end{itemize}
+
+\paragraph{Horizontal Asymptote:} 
+A horizontal asymptote is a line that the graph approaches but never reaches. Considering an exponential growth, the graph approches $y=0$ for $x \rightarrow -\infty$. So, with dexreasing $x$, the graph gets closer and closer to zero but never reaches the $x-$axis.
+
+
+
+\paragraph{Long-Term Behavior}
+\begin{itemize}
+    \item For exponential growth ($b>1$): $f(x) \to \infty$ as $x \to \infty$, $f(x) \to 0$ as $x \to - \infty$, 
+    \item For exponential  decay ($0<b<1$): $f(x) \to 0$ as $x \to \infty$ 
+\end{itemize}
+
+\paragraph{Euler's number $e$}
+Euler's number, denoted as $e$, is one of the non-terminating constants we often use in mathematics and science. Another non-terminating constant you might already know is $\pi$ which is often used in geometry.
+Euler’s number approximately equals 2.71828. You also obtain $e$ when calculating the following term for very large numbers $n$: 
+\begin{align}
+    e \approx  \left( 1+ \frac{1}{n} \right)^n
+\end{align}
+With increasing $n$ the term approches $e$ as you can see in the following table: 
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+$n$ & $\left(1 + \frac{1}{n}\right)^n$ \\
+\hline
+1      & 2{.}000000 \\
+2      & 2{.}250000 \\
+5      & 2{.}488320 \\
+10     & 2{.}593742 \\
+100    & 2{.}704814 \\
+1000   & 2{.}716924 \\
+10000  & 2{.}718146 \\
+100000 & 2{.}718268 \\
+\hline
+$\infty$ & $e \approx 2{.}718282\ldots$ \\
+\hline
+\end{tabular}
+\caption{approximation of Euler's number $e$ as $n$ increases}
+\label{tab:euler}
+\end{table}
+Euler’s number helps mathematicians, physicists and other scientists explain exponential growth in various phenomena, from population to radioactive decay. So, euler's number $e$ often becomes the growth factor when describing natural phenomena. The following function is thus very important in math and physics: 
+\begin{align}
+    f(x) = a \cdot e^x
+\end{align}
+
+
+
+
+\paragraph{Transformations of Exponential Functions}
+
+Similar to sine and cosine functions, exponential functions can also be changed using different parameters. These parameters allow us to adjust the shape and position of the graph.
+
+The general form is:
+\begin{equation}
+    f(x) = a \cdot b^{k(x-c)} + d
+\end{equation}
+
+Each parameter has a clear effect on the graph:
+
+\begin{itemize}
+    \item \textbf{Parameter $a$ (vertical scaling):}  
+    This parameter stretches or compresses the graph vertically.
+    \begin{itemize}
+        \item $a > 1$: the graph becomes steeper (grows faster visually)
+        \item $0 < a < 1$: the graph becomes flatter
+        \item $a < 0$: the graph is flipped upside down (reflection at the x-axis)
+    \end{itemize}
+
+    \item \textbf{Parameter $k$ (growth speed):}  
+    This parameter controls how fast the function grows or decays.
+    \begin{itemize}
+        \item larger $k$: faster growth or decay
+        \item smaller $k$: slower change
+    \end{itemize}
+    You can think of $k$ as controlling how ``quickly'' the curve rises or falls.
+
+    \item \textbf{Parameter $c$ (horizontal shift):}  
+    This moves the graph left or right.
+    \begin{itemize}
+        \item shift to the right if $c > 0$
+        \item shift to the left if $c < 0$
+    \end{itemize}
+    This means the function starts growing earlier or later.
+
+    \item \textbf{Parameter $d$ (vertical shift):}  
+    This moves the entire graph up or down.
+    \begin{itemize}
+        \item $d > 0$: graph moves up
+        \item $d < 0$: graph moves down
+    \end{itemize}
+\end{itemize}
+
+
+By changing these parameters, we can adapt exponential functions to model many real-world processes, such as population growth or decay processes in physics.
+
+
+\subsection{Logarithms}
+
+The logarithm is the inverse operation of an exponential function. While an exponential function answers the question
+
+\begin{center}
+    \textit{``What is the result if we raise a number to a certain power?''}
+\end{center}
+
+the logarithm answers the reverse question:
+
+\begin{center}
+    \textit{``To which power must we raise a number to obtain a given result?''}
+\end{center}
+
+Mathematically, this relationship is written as:
+\begin{equation}
+    b^x = y \quad \Longleftrightarrow \quad \log_b(y) = x
+\end{equation}
+
+Here:
+\begin{itemize}
+    \item $b$ is the base
+    \item $x$ is the exponent
+    \item $y$ is the result
+\end{itemize}
+
+\paragraph{Example:}
+\begin{equation}
+    2^3 = 8 \quad \Longleftrightarrow \quad \log_2(8) = 3
+\end{equation}
+
+\paragraph{Intuitive Explanation:}
+\begin{itemize}
+    \item Exponential function: you start with a number and calculate the result
+    \item Logarithm: you are given the result and want to find the exponent
+\end{itemize}
+
+\paragraph{Important Notes:}
+\begin{itemize}
+    \item Logarithms are only defined for positive numbers ($y > 0$)
+    \item The base must be positive and not equal to 1
+\end{itemize}
+
+\paragraph{Summary:}
+The logarithm is a tool that helps us ``undo'' exponential growth. It is especially useful when we want to solve equations where the unknown is in the exponent.
+
+
+\subsubsection{Natural Logarithm}
+
+The logarithm with base $e$ is called the natural logarithm and denoted by $\ln$:
+\begin{equation}
+     log_e (y) = \ln(y)
+\end{equation}
+
+
+So the natural logarithm answers the question:
+\begin{center}
+    \textit{``To which power must we raise $e$ to get a certain number?''}
+\end{center}
+
+
+\paragraph{Inverse Relationship}
+
+Exponential and logarithmic functions undo each other:
+\begin{equation}
+    e^{\ln(x)} = x
+\end{equation}
+\begin{equation}
+    \ln(e^x) = x
+\end{equation}
+
+%Plots von ln und e-Fkt einfügen%
+
+From the graphs, we can also see that the natural logarithm function and the exponential function cancel each other out. This means they are \textbf{inverse functions}.
+
+Geometrically, this relationship can be observed by the fact that their graphs are mirror images of each other along the line
+\begin{equation}
+    y = x
+\end{equation}
+which is also called the angle bisector.
+
+\paragraph{Intuitive Explanation:}
+\begin{itemize}
+    \item The exponential function $e^x$ takes an input $x$ and produces a value
+    \item The logarithm $\ln(x)$ takes this value and returns the original input $x$
+\end{itemize}
+
+So applying one function after the other brings you back to where you started:
+\begin{equation}
+    \ln(e^x) = x \quad \text{and} \quad e^{\ln(x)} = x
+\end{equation}
+
+\subsection{Summary}
+
+\begin{itemize}
+    \item Exponential functions describe growth and decay processes
+    \item The number $e$ is fundamental for natural growth
+    \item Logarithms are the inverse of exponential functions
+    \item Both concepts are essential for modeling real-world phenomena
+\end{itemize}
