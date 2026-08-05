@@ -1,0 +1,10 @@
+Re-organize structure? Some things show up twice:
+- harmonic oscillator (pull to the front? Explain oscillations?)
+- trigonometric functions 
+
+I think we should split the math part into two chapters. Maybe re-structure like this:
+
+- Rough idea: What is sound
+- Trigonometric functions 
+- The harmonic oscillator -> what are oscillations, even?
+- SOund 

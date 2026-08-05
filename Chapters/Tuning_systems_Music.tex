@@ -1,0 +1,54 @@
+\section{Tuning Systems in Music}
+
+\subsection{Frequency and Musical Notes}
+
+In this section, we will only consider tones which correspond to periodic pressure waves. Their periodicity means that we can associate them with a certain frequency. Period notably doesn't mean that they are perfect sine waves as we have considered before, but rather an arbitrary periodic function. With the audible range going spanning from 20 Hz to 20.000 Hz, the question is now what kinds of frequencies we want to consider.
+
+If you picture the keyboard of a piano with its discrete white and black keys, it is quite clear to see that (Western) music only deals with a handful of discrete frequencies. There is --- apart from esthetic ones --- no reason not to use the frequencies say, between D and D flat. If you have a string instrument, you can quite easily play at such a frequency by just putting your finger between the position for D flat and D . But now if you try to play it in combination with, let's say, G, it would sound somewhat ``off''. To some degree, it is still a matter of taste, but the music community has collectively agreed to use only a certain set of frequencies that they find most pleasant sounding. We call these sets \textbf{musical scales}. Since they are a matter of taste and convention, different cultures have developed different musical scales. For the moment, we'll focus on the ones that are most present in Western music. 
+
+Before one can build a house, one must lay a foundation. In the case of music, we must choose one frequency that we want to start with, and from it we'll construct the rest.
+
+A commonly used reference frequency in Western music is the A above the middle C. Its frequency is given by 
+\begin{equation}
+    f_A = 440 \,\text{Hz}.
+\end{equation}
+
+In the past, people have used a lower frequency for the A. It is thought that in Bach's times, the value might have been as low as $415$ Hz! This doesn't make Bach's music by any means unplayable in our modern times, though, since it turns out that \textbf{music is much less about absolute frequencies and all about ratios}.
+
+\subsection{Octaves}
+
+The most important ratio in music is 1:2, which we call an octave. 
+For example, to obtain the frequency of A', the note one octave above the A above the middle C, we only have to double the frequency, so
+\begin{equation}
+    f_{\text{octave}} = 2 \cdot f \\
+    f_{A'} = 2 \cdot f_A = 880\, \text{Hz}.
+\end{equation}
+
+One reason we care about octaves is that notes that are an octave apart like A and A' sound similar, and make a pleasant sound when combined. It therefore makes sense that given a note in a scale, the note an octave higher and lower should be also in the musical scale. (In fact, any number of octaves higher and lower should be in the scale.)
+
+\textit{Question: What is the frequency of the note one octave lower than A?}
+
+%\paragraph{Important Idea:}
+%Music is based on \textbf{ratios of frequencies}, not on absolute values.
+
+\subsection{Equal Temperament}
+
+In modern music, the octave is divided into 12 equal steps.
+
+Each step corresponds to multiplying the frequency by the same factor.
+
+\begin{equation}
+    f_n = f_0 \cdot 2^{\frac{n}{12}}
+\end{equation}
+
+\paragraph{Intuitive Explanation:}
+\begin{itemize}
+    \item Instead of using simple fractions, we divide the octave evenly
+    \item Each step sounds similar in size
+\end{itemize}
+
+\paragraph{Why is this useful?}
+It allows us to play in all keys without retuning the instrument.
+
+\paragraph{But:}
+The intervals are not perfectly ``pure'' anymore — this is a compromise.
