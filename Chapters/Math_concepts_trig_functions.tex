@@ -1,6 +1,6 @@
 \section{Trigonometric functions}
 
-In this chapter, we'll learn about trigonometric functions, so functions whose argument is an angle. Examples for trigonometric functions are Sine, Cosine and Tangent. As we'll see later, these functions let us describe oscillations mathematically, and they are essential for any mathematical description of periodic functions --- which all musical notes are.
+In this chapter, we'll learn about trigonometric functions, so functions whose argument is an angle. Examples for trigonometric functions are sine, cosine and tangent. As we'll see later, these functions let us describe oscillations mathematically, and they are essential for any mathematical description of periodic functions --- which all musical notes are.
 
 \begin{comment}
 
@@ -8,7 +8,7 @@ In this chapter, we'll learn about trigonometric functions, so functions whose a
 
 Trigonometric functions describe the relationship between angles and ratios of sides in triangles (originally right-angled triangles). They are fundamental for describing oscillations. One of the reasons why this is the case is because they are periodic, just like the oscillations we want to describe with them.
 
-\paragraph{Definition of the Sine and Cosine Function}
+\paragraph{Definition of the sine and cosine Function}
 
 The most important trigonometric functions are sine and cosine. They are special ratios of the side lengths in a right-angled triangle.
 In a right triangle, the sine of an angle $\alpha$ is defined as:
@@ -20,9 +20,9 @@ In a right triangle, the sine of an angle $\alpha$ is defined as:
 \paragraph{Radians and degrees}
 
 \paragraph{Visualizing sine and cosine}
-To get an idea what the Sine function actually looks like, we plot $\sin(x)$ as a function of the angle $x$ in radians.
+To get an idea what the sine function actually looks like, we plot $\sin(x)$ as a function of the angle $x$ in radians.
 
-As you can see in Fig. \ref{img:sinusfunktion}, the Sine function repeats after a period of $2\pi$. It is precisely this periodicity that makes it useful for describing oscillations.
+As you can see in Fig. \ref{img:sinusfunktion}, the sine function repeats after a period of $2\pi$. It is precisely this periodicity that makes it useful for describing oscillations.
 
 \end{comment}
 
@@ -63,14 +63,14 @@ A drawing of the unit circle with some angles in degrees and in radians is given
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{Bilder/unit_circle.png}
-    \caption{Unit Circle}
+    \caption{The unit circle with some angles in degrees and radians.}
     \label{fig:unit_circle}
 %Quelle : https://www.govst.edu/uploadedFiles/Academics/Colleges_and_Programs/CAS/Trigonometry_Short_Course_Tutorial_Lauren_Johnson.pdf%
 \end{figure}
 
-\subsection{Defining Sine, Cosine and Tangent}
+\subsection{Defining sine, cosine and tangent}
 
-The trigonometric functions Sine, Cosine and Tangent describe relationships between angles and side lengths in right-angled triangles. So let's start with some facts about right-angled triangles. The side opposite to the right-angle is called \textbf{hypothenuse}. If the length of the hypothenuse is called $c$ and the lengths of the two legs is given by $a$ and $b$, Pythagoras Theorem states that
+The trigonometric functions sine, cosine and tangent describe relationships between angles and side lengths in right-angled triangles. So let's start with some facts about right-angled triangles. The side opposite to the right-angle is called \textbf{hypothenuse}. If the length of the hypothenuse is called $c$ and the lengths of the two legs is given by $a$ and $b$, Pythagoras Theorem states that
 \begin{equation}
     a^2+b^2=c^2.
 \end{equation}
@@ -122,8 +122,7 @@ So for $\alpha = 45^\circ$, the triangle is isosceles, so both legs are equal. C
 
 \textit{Question: What is $\sin(30^\circ)$? What about $\sin(5\pi/6)$? Use Fig. \ref{fig:unit_circle} to find the ratios. What about $\cos(120^\circ)$ and $\cos(4\pi/4)$? Do you notice something?}
 
-\paragraph{Periodicity:}
-The periodicity of sine and cosine function follows directly from the geometry of the unit circle. After a full rotation of $360^\circ$ (or $2\pi$ radians), the same  triangle is  created , and thus the point on the circle is identical. So, sine and cosine are periodic functions with a period of  $360^\circ$ (or $2\pi$ radians). 
+One important property of all trigonometric functions is their \textbf{periodicity.} This follows directly from the geometry of the unit circle. After a full rotation of $360^\circ$ (or $2\pi$ radians), the same  triangle is  created , and thus the point on the circle is identical. So, sine and cosine are periodic functions with a period of  $360^\circ$ (or $2\pi$ radians). 
 In a more formal way, this is written as follows :
 \begin{equation}
     \sin(\alpha + 2\pi) = \sin(\alpha), \quad \cos(\alpha + 2\pi) = \cos(\alpha)
@@ -136,16 +135,22 @@ Another important identity is:
 This follows from the unit circle as well. The right triangles that are considered show the side lengths of sine and cosine while the length of the hypothenuse is 1. Thus, the identity is derived using this characteristics and Pythagoras Theorem.  
 
 
-
-
 \subsection{Graphs of Trigonometric Functions}
 
 Trigonometric functions can also be represented graphically.
-As we saw in the last section, sine and cosine function are periodic with a period of $2\pi$. 
-\paragraph{Sine function}
-%Bild einer Sinus-Fkt. einfügen%
-When plotting the sine function we get to know more properties of it: 
+As we saw in the last section, sine and cosine function are periodic with a period of $2\pi$. This can be seen in Fig. \ref{fig:sin_graph}.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\linewidth]{Bilder/sin_graph_period.jpeg}\includegraphics[width=0.45\linewidth]{Bilder/cos_graph_period.jpeg}
+    \caption{Left: Graph of the sine function. The dashed black line shows the period. Right: Graph of the cosine function with its period.}
+    \label{fig:sin_graph}
+%Quelle : selbst mit Python
+\end{figure}
+
+We now list a few properties of the sine and cosine function.
+
+\paragraph{Sine function}
 \begin{itemize}
     \item \textbf{Domain \footnote{all possible input values (what you can plug into the function)}}: $(-\infty, \infty)$  
     This means you can insert any real number into the function.
@@ -167,7 +172,6 @@ When plotting the sine function we get to know more properties of it:
     \end{equation}
 
 \end{itemize}
-
 
 
 \paragraph{Cosine Function}
@@ -201,13 +205,75 @@ When plotting the cosine function one observes similar properties:
 \end{itemize}
 Both sine and cosine functions are periodic and oscillate between $-1$ and $1$. This makes them especially useful for describing waves and oscillations in physics.
 
-\subsection{Transformations of Sine and Cosine Functions}
+For completeness sake, Fig. \ref{fig:tan_graph} shows the graph of the tangent function. Since it is not particularly useful for describing waves, we only mention it here in passing. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\linewidth]{Bilder/tan_graph_period.jpeg}
+    \caption{Graph of the tangent function. The black dashed line shows its period.}
+    \label{fig:tan_graph}
+%Quelle : selbst mit Python
+\end{figure}
+
+\paragraph{Tangent Function}
+
+\begin{itemize}
+    \item \textbf{Domain}: $(-\infty, \infty) \backslash \{n\cdot \pi + \pi/2 | n \in \mathbb{Z}\}$  
+    Any real number can be used as input.
+
+    \item \textbf{Range}: $(-\infty, \infty)$ 
+    The function can take all values.
+
+    \item \textbf{Periodicity}:  
+    The cosine function also repeats every $\pi$:
+    \begin{equation}
+        \tan(x + \pi) = \tan(x)
+    \end{equation}
+    \item \textbf{Odd function}:  
+    The tangent function is symmetric with respect to the origin. This means:
+    \begin{equation}
+        \tan(-x) = -\tan(x)
+    \end{equation}
+\end{itemize}
+
+\subsection{Relationship Between sine and cosine}
+
+The sine and cosine functions are closely related and can be transformed into each other by a simple horizontal shift. In fact, they describe the same type of oscillation, but start at different points.
+
+The relationship is given by:
+\begin{equation}
+    \cos(x) = \sin\left(x + \frac{\pi}{2}\right)
+\end{equation}
+\begin{equation}
+    \sin(x) = \cos\left(x - \frac{\pi}{2}\right)
+\end{equation}
+
+This means that the cosine function is just the sine function shifted to the left by $\frac{\pi}{2}$ (a quarter of a full period), and vice versa. This is illustrated in Fig. \ref{fig:sin_cos_graph}.
+
+\paragraph{How to think about it :}
+\begin{itemize}
+    \item Both functions describe the same wave shape.
+    \item The only difference is where the wave starts.
+    \item A shift of $\frac{\pi}{2}$ moves the starting point from a maximum (cosine) to a zero crossing (sine).
+\end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{Bilder/sin_cos_graph.jpeg}
+    \caption{Graph of the sine function (blue) and the cosine function (red) in the same diagram. Note how the blue blue line is just the red line shifted to the right.}
+    \label{fig:sin_cos_graph}
+%Quelle : selbst mit Python
+\end{figure}
+
+\subsection{Transformations of sine and cosine Functions}
 
 Sine and cosine functions can be modified using parameters. The general form of such a function is:
 
 \begin{equation}
-    f(x) = a \cdot \sin(bx + c) + d \quad \text{or} \quad f(x) = a \cdot \cos(bx + c) + d
+    f(x) = a \cdot \sin(bx + c) + d \quad \text{or} \quad f(x) = a \cdot \cos(bx + c - \pi/2) + d
 \end{equation}
+
+Since cosine is just sine shifted, we can just pick one whenever we want to describe a ``sine-shaped'' function.
 
 Each parameter changes the graph in a specific way:
 
@@ -257,26 +323,6 @@ Each parameter changes the graph in a specific way:
     \item The \textbf{vertical shift} moves the whole wave up or down.
 \end{itemize}
 
-\subsection{Relationship Between Sine and Cosine}
+As we'll see in the next chapter, we can model many different types of waves and oscillations by changing the parameters $a$, $b$, $c$, and $d$. This is especially important in physics, for example when describing sound waves or vibrations.
 
-The sine and cosine functions are closely related and can be transformed into each other by a simple horizontal shift. In fact, they describe the same type of oscillation, but start at different points.
-
-The relationship is given by:
-\begin{equation}
-    \cos(x) = \sin\left(x + \frac{\pi}{2}\right)
-\end{equation}
-\begin{equation}
-    \sin(x) = \cos\left(x - \frac{\pi}{2}\right)
-\end{equation}
-
-This means that the cosine function is just the sine function shifted to the left by $\frac{\pi}{2}$ (a quarter of a full period), and vice versa.
-
-\paragraph{How to think about it :}
-\begin{itemize}
-    \item Both functions describe the same wave shape.
-    \item The only difference is where the wave starts.
-    \item A shift of $\frac{\pi}{2}$ moves the starting point from a maximum (cosine) to a zero crossing (sine).
-\end{itemize}
-
-\paragraph{Summary:}
-By changing the parameters $a$, $b$, $c$, and $d$, we can model many different types of waves and oscillations. This is especially important in physics, for example when describing sound waves or vibrations.
+%\subsection{Summary}
