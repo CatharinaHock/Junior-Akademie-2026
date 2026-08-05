@@ -1,5 +1,11 @@
-\section{Harmonic Oscillator - spring and simple pendulum}
+\section{The Harmonic Oscillator}%- spring and simple pendulum
+%As the harmonic oscillator is a very important concept in physics, we want to take a closer look at it. It is used not only to describe sound, but also many other oscillations and vibrations in physics. So the following phenomena can all be described using the harmonic oscillator: a playground swing, a guitar string, a loudspeaker, or a spring with a mass attached to it.
+In this chapter, we'll cover the harmonic oscillator. Because of its versatility, it is the physicist's favorite toy model.  
+Wherever a system oscillates, it can be approximated to the first order\footnote{That means for reasonably small displacements, it's a ``good'' approximation.} as a harmonic oscillator. This applies for example to a pendulum, a guitar string, and a playground swing.\footnote{Here, the restoring force isn't directly proportional to the displacement, but as an approximation, we can pretend it is --- and get fairly good predictions for the period $T$, for example.}
 
+
+
+\begin{comment}
 In physics, an oscillation is a periodic variation of a system's state variables over time. Periodic means that after some fixed time $T$, the \textbf{period}, the system's state repeats. For example, picture a swing set at the playground. Its back-and-forth movement is \textit{periodic}.
 
 A prototypical system that exhibits periodic behavior is the harmonic oscillator. Picture a spring hanging down from the ceiling with a mass attached to its bottom half. If you don't touch it, it stays in its so-called \textit{equilibrium state}. Now imagine you pull down the mass a little and then let it go. The mass will move up, through its equilibrium position and then some, slow down, and move down again. It will continue moving up and down, the movement becoming smaller and smaller, until it comes to rest once again in its equilibrium position.
@@ -10,28 +16,35 @@ This proportionality is what makes the oscillator \textit{harmonic}.
 The maximum displacement from the equilibrium position is called the \textbf{amplitude}. Interestingly, the \textbf{Period} does not depend on the amplitude! That's one of the things that make the harmonic oscillator special.
 A perfect, frictionless harmonic oscillator would keep oscillating forever. When we talk about harmonic oscillators, we'll usually mean this idealized version of it. Reality, of course, is more complicated. The reason a real spring stops swinging after a while is because the system loses energy to the friction with the air and the spring being heated by repeated deformations. 
 
-Now, what does this have to do with sound waves? The reason the harmonic oscillator is the physicist's favorite toy-model is its versatility. Wherever a system oscillates, it can be approximated to the first order\footnote{That means for reasonably small displacements, it's a ``good'' approximation.} as a harmonic oscillator. This applies for example to a pendulum, or the swing set we talked about earlier. Here, the restoring force isn't directly proportional to the displacement, but as an approximation, we can pretend it is --- and get fairly good predictions for the period $T$, for example.
 
-For sound, it's the pressure and density of the air that are changing periodically. The restoring force for a specific parcel of air comes, in this case, from interaction with its neighbors. A parcel of higher pressure will try to expand and lower its pressure to the ambient pressure. A parcel of lower pressure will be compressed by its neighboring parcels to get it to ambient pressure. We'll talk about this in more detail later, but as one of my physics professors once said: ``The whole world is made up of harmonic oscillators.'' \footnote{That's a hyperbole, of course, but you'd be surprised how far you can go with this relatively simple model.}
 
-\textbf{TODO: Text doppelt.}
+\textbf{TODO: Text doppelt.} 
 
-As the harmonic oscillator is a very important concept in physics, we want to take a closer look at it. It is used not only to describe sound, but also many other oscillations and vibrations in physics. So the following phenomena can all be described using the harmonic oscillator: a playground swing, a guitar string, a loudspeaker, or a spring with a mass attached to it.
+Now, what does this have to do with sound waves? For sound, it's the pressure and density of the air that are changing periodically. The restoring force for a specific parcel of air comes, in this case, from interaction with its neighbors. A parcel of higher pressure will try to expand and lower its pressure to the ambient pressure. A parcel of lower pressure will be compressed by its neighboring parcels to get it to ambient pressure. We'll talk about this in more detail later, but as one of my physics professors once said: ``The whole world is made up of harmonic oscillators.'' \footnote{That's a hyperbole, of course, but you'd be surprised how far you can go with this relatively simple model.}
+\end{comment}
 
-The most important property of a harmonic oscillator is that the restoring force always points back towards the equilibrium position and becomes stronger the further the object is displaced from it.  This leads to harmonic oscillations which are described by sine and cosine functions. So the following functions are useful:
-\begin{align}
-   x(t)=A\sin(2\pi ft) \\
-   x(t)=A\cos(2\pi ft)
+
+The most important property of a harmonic oscillator is that the restoring force always points back towards the equilibrium position and becomes stronger the further the object is displaced from it. In equations,
+\begin{equation}
+    F = - k \cdot x
+\end{equation}
+where F is the restoring force, $x$ the displacement from the equilibrium position, and $k$ some constant specific to the system. Note how the force has the opposite sign of the displacement --- this way, the force points back to the equilibrium position.
+
+This leads to so-called harmonic oscillations which are described by sine and cosine functions. Why we obtain sine and cosine functions is beyond the scope of this course, since we would need differential equations to explain the derivation. So instead of stepping through the derivations, we'll just give you the solution here:
+\begin{align}\label{eq:ho_sol}
+   x(t)=A\sin(2\pi ft + \varphi)
 \end{align}
-
-So every oscillation can be described using a few important quantities.
+Notice how this is very similar to the expression in eq. \ref{eq:shifted_sine}. Let us uncover the meaning of the different quantities.
 
 \begin{description}
-\item[Equilibrium position:] The resting position of the object.
+\item[Equilibrium position:] The resting position of the object. We have chosen it to be at $x=0$ for convenience. If it were somewhere else, we'd have to add some constant $x_0$ to the right hand side of eq. \ref{eq:ho_sol}.
 \item[Amplitude ($A$):] The maximum distance from the equilibrium position.
-\item[Period ($T$):] The time needed for one complete oscillation.
 \item[Frequency ($f$):] The number of oscillations per second.
+\item[Period ($T$):] The time needed for one complete oscillation. The period and the frequency are related to each other by $f = 1/T$.
 \end{description}
+$\varphi$ allows us to let the system start with a different phase, instead of always starting at the equilibrium position.
+
+Now, what does this have to do with sound waves? For sound, it's the pressure and density of the air that are changing periodically. The restoring force for a specific parcel of air comes, in this case, from interaction with its neighbors. A parcel of higher pressure will try to expand and lower its pressure to the ambient pressure. A parcel of lower pressure will be compressed by its neighboring parcels to get it to ambient pressure. We'll talk about this in more detail later.
 
 Let us now explore the two most common and simplest examples of harmonic oscillators. 
 
@@ -52,8 +65,9 @@ The restoring force is caused by the spring. This force is described by \textbf{
 \begin{align}
     F =-kx
 \end{align}
-$F$ is the restoring force, $x$ is the displacement from the equilibrium position and $k$ is the spring constant. The minus sign is very important as it tells us that the spring force points always back to equilibrium position. 
-To describe the oscillation, we need the period $T$ rexpectively the frequency $f = 1/T$
+Where again, $F$ is the restoring force, $x$ is the displacement from the equilibrium position and $k$ is the spring constant. %The minus sign is very important as it tells us that the spring force points always back to equilibrium position. %(Moved to the pervious section)
+To describe the oscillation, we need the period $T$ respectively the frequency $f = 1/T$
+
 
 For a spring oscillator, we can ask questions such as:
 
@@ -93,7 +107,7 @@ From our measurements, we found:
     f \propto \sqrt{k}.
     \]
 
-    \item For small oscillations, the frequency is independent of the amplitude.Doubling the amplitude does not change the frequency.
+    \item For small oscillations, the frequency is independent of the amplitude. Doubling the amplitude does not change the frequency.
 \end{itemize} 
 
 So for the frequency, this leads to: 
