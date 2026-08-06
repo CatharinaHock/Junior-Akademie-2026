@@ -28,6 +28,8 @@ One reason we care about octaves is that notes that are an octave apart like A a
 
 \textit{Question: What is the frequency of the note one octave lower than A?}
 
+\textbf{Answer:} $f_a = 440/2\,\text{Hz} = 220$ Hz. 
+
 \subsection{Intervals}
 
 With the frequency ratio for the octave fixed, we're left to determine the rest of the frequency ratios. The difference in pitch between two notes is called an \textbf{interval}. The size of an interval directly corresponds to a ratio in frequencies. For example, as we've seen before, an octave always corresponds to a ration of 2:1. 
@@ -64,6 +66,10 @@ The intervals are also shown in Fig. \ref{fig:intervalle} on a piano keyboard. I
     \label{fig:intervalle}
     % Quelle : https://woodandfirestudio.com/wp-content/uploads/2023/07/intervalleen.jpg
 \end{figure}
+
+\textit{Question: What is the interval between C and G? F and G? D and F? $B^\sharp$ and F?}
+
+\textbf{Answer:} C and G: fifth. F and G: major second. D and F: minor third. $B^\sharp$ and F: fifth. 
 
 Now that we can talk about intervals in precise language, the question is what frequency ratios we want to assign to the different intervals. This choice determines the tuning. We will talk here about three kinds of tuning:  Pythagorean tuning, Just tuning and Equal Temperament.
 
@@ -106,22 +112,120 @@ The other notes can be obtained in a similar manner. If it interests you, you ca
 
 \textit{Question: What is the frequency ratio for the two semitones C-D? What about D-F, F-G and G-A?}
 
-\textbf{Answer:} $f_D/f_C = 9/8$, $f_F/f_D = f_F/f_C \cdot f_C/f_D = 4/3 \cdot 8/9 = 32 / 27$, $f_G/f_F = 9/8$, $f_A/f_G = 9/8$. In particular, an interval of two semitones doesn't always correspond to the same frequency ratio!
+\textbf{Answer:} $f_D/f_C = 9/8$, $f_F/f_D = f_F/f_C \cdot f_C/f_D = 4/3 \cdot 8/9 = 32 / 27$, $f_G/f_F = 9/8$, $f_A/f_G = 9/8$. In particular, an interval of two semitones doesn't always correspond to the same frequency ratio! This is also illustrated in Fig. \ref{fig:pyth_scale}.
 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width = 0.6 \textwidth]{Bilder/pythoagorean_scale.png}
+    \caption{Some notes from the Pythagorean scale.}
+    \label{fig:pyth_scale}
+    % Quelle : Physics of sound and color fig 12.6
+\end{figure}
 
 \subsection{Just tuning}
 
+To address our problem of the dissonant major third, Just tuning fixes two intervals: The fifth, with a ratio $3/2$, and the major third, with the ratio $5/4$. Similarly to how we found the ratios in Pythagorean tuning, we can now ascend and descend by fifths, major thirds and octaves to reach other notes, and multiply the factors to obtain the frequency ratio.
+
+Now, $f_E/f_C = 5/4$ (major third), $f_G/f_C = 3/2$ (fifth). Now it gets trickier. From E, we can descend by a fifth to a, and then ascend by an octave to A. So 
+
+\[
+\begin{array}{c@{\;\rightarrow\;}c@{\;\rightarrow\;}c}
+E & a & A\\
+5/4 & 5/4 \cdot 2/3 = 5/6 & 5/6 \cdot 2 = 5/3
+\end{array}
+\]
+
+\textit{Question: What is $f_F/f_C$? Hint: F-A is a major third, and $f_A/f_C = 5/3$.}
+
+\textbf{Answer: } $f_F/f_C = f_F/f_A \cdot f_A/f_C = 4/5 \cdot 5/3 = 4/3$
+
+\textit{Question: Can you do the same for D and B?}
+
+Continuing in this way gives us the scale in Fig. \ref{fig:just_scale}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width = 0.6 \textwidth]{Bilder/Just_Tuning_scale.png}
+    \caption{Diatonic scale in Just tuning}
+    \label{fig:just_scale}
+    % Quelle : Physics of sound and color fig 12.11
+\end{figure}
+
+We can go even further to obtain the full chromatic scale, so all the sharps and flats as well. 
+
+\textit{Question: Can you work out the ratios for the rest of the scale?}
+
+\textbf{Answer:} Fig. \ref{fig:just_scale_chrom} shows the ratios alongside the derivation.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width = 0.6 \textwidth]{Bilder/just_scale_flat.png}
+    \caption{Chromatic scale in Just tuning}
+    \label{fig:just_scale_chrom}
+    % Quelle : Physics of sound and color fig 12.11
+\end{figure}
+
+Interestingly, $f_{G^\sharp} \neq f_{A^\flat}$ and also for $F^\sharp$ and $G^\flat$, $C^\sharp$ and $D^\flat$ etc. We call these pairs of notes \textbf{enharmonics}. On a piano, these notes are indistinguishable, as they are played by the same black key.
+
+\textit{Question: What is the ratio $f_{G^\sharp}/f_{A^\flat}$? What about other pairs of enharmonics?}
+
+\textbf{Answer:} $f_{G^\sharp}/f_{A^\flat}=125/128$. This holds for other pairs of enharmonics as well, even for double flats and double sharps.
+
+However, there are still some problems with Just tuning:
+\begin{itemize}
+    \item The minor third D-F has the ratio $(4/3)/(9/8) = 33/27$ instead of the Just minor third $6/5$. Because of the larger integers present in the ratio, this sounds harsher than the Just minor third.
+    \item As the previous problem hinted: The ratios between the frequencies of two notes depend on the key we're playing in (in our examples we used C). This means that to play in another key in Just tuning, one would need to re-tune the instrument. In reality often impossible, since many pieces switch between different keys, and there's no time to re-tune during a performance.
+    \item If we only play Just intervals, the frequencies might start to drift.
+    \textit{Question: What is the ratio between the frequencies of the first and the final D in the sequence D-G-E-A-D (See Fig. \ref{fig:just_problem})? Find the sizes of the intervals first.}
+
+    \textbf{Answer:} D to G above: perfect fourth; G to E below: minor third; E to A above: perfect fourth; A to D below: fifth.
+    Using the intervals we constructed earlier
+
+    \begin{equation}
+        f_D = f_D \cdot \frac{4}{3} \cdot \frac{5}{6} \cdot \frac{4}{3} \cdot \frac{2}{3} = \frac{80}{81} f_D \neq f_D.
+    \end{equation}
+    This ratio $80/81$ is called \textbf{the syntonic comma}. This ratio shows up often in Just tuning, and is large enough to lead to an audible dissonance.
+\end{itemize}
+
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width = 0.6 \textwidth]{Bilder/problem_just.png}
+    \caption{A sequence of notes that leads to drift in Just tuning.}
+    \label{fig:just_problem}
+    % Quelle : Physics of sound and color fig 12.11
+\end{figure}
+
+%% Problems with Pythagorean tuning
 
 \subsection{Equal Temperament}
 
-In modern music, the octave is divided into 12 equal steps.
+So far, we saw tunings where the ratios of frequencies depend on the key we constructed the scale on. A problem of the Pythagorean tuning was that the major third sounded too harsh. By imposing a low integer ratio for the major third in Just tuning, we were able fix that, at the cost of potentially drifting frequencies (and a harsh major third D-F).
 
-Each step corresponds to multiplying the frequency by the same factor.
+If we want to keep nice integer ratios between our frequencies, this is as good as it gets. But if we're willing to sacrifice some consonance, we can obtain a scale that is invariant under change of key: the \textbf{Equal temperatment}.
+
+\textit{Question: Do you have an idea how we could obtain a scale that doesn't change under change of key?}
+
+Since an octave has 12 semitones, and we don't want the scale to shift when we start out from a different tone, all semitones must have the same size. Let's call the ratio between two tones differing only by a semitone $r$. Since 12 semitones equal one octave, we must have 
+
+\begin{align}
+    r^{12} = 2
+\end{align}
+So 
+\begin{align}
+    r = 2^{1/12} \approx 1.0595
+\end{align}
+For reference, in Just tuning we have $f_{C^\sharp}/f_C = 25/24 \approx 1.0417$ and $f_{D^\flat}/f_C = 16/15 \approx 1.0667$, so the frequency of $C^\sharp$ (which is equivalent to $D^\flat$) in equal temperament is between the frequency of $C^\sharp$ and $D^\flat$ in Just tuning.
+
+Starting from a tone with frequency $f_0$, the note $n$ semitone steps above it thus has the frequency 
 
 \begin{equation}
-    f_n = f_0 \cdot 2^{\frac{n}{12}}
+    f_n = f_0 \cdot 2^{\frac{n}{12}}.
 \end{equation}
 
+This allows us the play in all keys without retuning the instrument --- at the cost of giving up perfectly ``pure'' intervals with integer ratios.
+
+\begin{comment}
 \paragraph{Intuitive Explanation:}
 \begin{itemize}
     \item Instead of using simple fractions, we divide the octave evenly
@@ -133,3 +237,4 @@ It allows us to play in all keys without retuning the instrument.
 
 \paragraph{But:}
 The intervals are not perfectly ``pure'' anymore — this is a compromise.
+\end{comment}

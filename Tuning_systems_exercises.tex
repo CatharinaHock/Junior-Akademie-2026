@@ -1,0 +1,141 @@
+\documentclass[a4paper, 11pt]{article}
+%\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{calc}
+%\usepackage{fourier} %% changes everything to sans-serif!
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{textcomp}
+%\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{cd}
+\usepackage{dirtytalk}
+\usepackage{titlesec}
+\usepackage{verbatim}
+\usepackage{pdfpages}
+\usepackage{caption}
+%%\captionsetup[figure]{labelfont=footnotesize}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+%% neu
+\usepackage{physics}
+\usepackage{accents} %% for multiple subscripts
+\usepackage{fancyhdr} %% for header and footer
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{graphicx} % Required for inserting images
+%\usepackage[ngerman]{babel}
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+
+\title{Tuning Systems Exercises}
+\author{Catharina Hock, Stefanie Hövermann}
+\date{August  2026}
+
+\newcommand{\answerline}[1][0.5cm]{%
+    \noindent\rule{#1}{0.4pt}
+}
+
+\begin{document}
+\maketitle 
+
+\section{Octaves}
+
+Remember:
+\begin{align}
+    f_{\text{octave}} &= 2 \cdot f
+\end{align}
+And $f_A = 440$ Hz.
+\begin{itemize}
+    \item  What is the frequency of the note one octave lower than A?
+    \item What is the frequency of the note two octaves than A?
+    \item What is the general expression to find the frequency of the note $n$ octaves higher or lower than A?
+    \item Given some frequency, how would you determine how many octaves higher or lower than A it is? Try this with $f = 110$ Hz. What is the general approach? Try to write down a general formula.
+\end{itemize}
+
+\section{Intervals}
+Use the piano keyboard and the figure with the intervals on it as a help.
+\begin{itemize}
+    \item What is the interval between C and G?
+    \item What is the interval between F and G?
+    \item What is the interval between D and F?
+    \item What is the interval between $B^\sharp$ and F?
+    \item What is the interval between A and E?
+    \item What are the intervals that show up in the C major scale? \textit{Hint: The tones that appear in the C major scale are all the white keys on the piano.}
+    \item If you play an instrument, try to make a list. Which intervals are consonant? Which intervals are dissonant? Which intervals appear most often in music?
+    \item You might have been wondering what happened to the interval with six semitones. Try to look it up!
+    \item Try to make up some intervals yourself and swap them with your partner.
+\end{itemize}
+
+\section{Pythagorean tuning}
+Pythagorean tuning treats the fifth as the most important interval (apart from the octave) with a fixed ratio of $3:2$, and deduces from it all other intervals. 
+
+Try to fill out the blanks:
+\[
+\begin{array}{c@{\;\rightarrow\;}c@{\;\rightarrow\;}c@{\;\rightarrow\;}c@{\;\rightarrow\;}c@{\;\rightarrow\;}c@{\;\rightarrow\;}c}
+F_3 & C_4 & G_4 & D_5 & A_5 & E_6 & B_6 \\
+\answerline/3 & 1 & \answerline & (3/2)^2 & \answerline & \answerline & (3/2)^5
+\end{array}
+\]
+
+Now, ascend and descend by an octave by using the ratio $2:1$.
+
+\[
+\begin{array}{c@{\;\rightarrow\;}c@{\;\rightarrow\;}c@{\;\rightarrow\;}c@{\;\rightarrow\;}c@{\;\rightarrow\;}c@{\;\rightarrow\;}c}
+F_4 & C_4 & G_4 & D_4 & A_4 & E_4 & B_4 \\
+\answerline & 1 & 3/2 & (3/2)^2 \cdot 1/2 & (3/2)^3 \cdot \answerline & (3/2)^4 \cdot \answerline& (3/2)^5  \cdot \answerline \\
+4/3& 1& \answerline & \answerline & \answerline & \answerline & \answerline
+\end{array} \\
+\]
+
+Reorder to obtain the diatonic scale in Pythagorean tuning. Use the Figure with the keyboard on it to find the right order of the notes.
+
+\[
+\begin{array}{c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c}
+C_4 & \answerline & \answerline & F_4 & \answerline & \answerline & B_4 & C_5 \\
+1 & \answerline & \answerline & \answerline & \answerline & \answerline & \answerline & 2
+\end{array} \\
+\]
+
+\begin{itemize}
+    \item What is the frequency ratio for the two semitones C-D?
+    \item What is the frequency ratio for the two semitones D-F?
+    \item What is the frequency ratio for the two semitones F-G?
+    \item What is the frequency ratio for the two semitones G-A?
+    \item What does this mean about semitone steps in Pythagorean tuning in general? Are they always the same size?
+    \item What is the frequency ratio for D-G? What kind of interval is it?
+    \item Which intervals do you expect to sound consonant? Which ones sound dissonant? Check. Does this agree with your intuition from the previous section?
+\end{itemize}
+
+\section{Just tuning}
+
+\begin{itemize}
+    \item What is one problem that we encountered with Pythagorean tuning? How does Just tuning solve that?
+    \item We already worked out $f_A/f_C$. Can you find the ratios for the rest of the diatonic scale? (So, all the white keys.)
+    \item What about the chromatic scale? (All the keys, so you'll have to look at the black keys too.)
+    \item  What is the ratio $f_{G^\sharp}/f_{A^\flat}$? What about other pairs of enharmonics like $F^\sharp$ and $G^\flat$? Choose at least two more pairs to check.
+    \item Is this surprising? What does that mean for a piano?
+    \item Do you expect this difference to be audible?
+    \item What are some problems of Just tuning?
+    \item What is the ratio between the frequencies of the first and the final D in the sequence D-G-E-A-D ? Find the sizes of the intervals first.
+\end{itemize}
+
+\section{Equal temperament}
+
+\begin{itemize}
+    \item Do you have an idea how we could obtain a scale that doesn't change under change of key?
+    \item If we want all semitones to be equal in size, what number should we choose for the ratio of two notes that are one semitone apart?
+    \item How does this value compare with semitones from Just tuning? Which of the ratios are bigger? Which ones are smaller?
+    \item What is the ratio between C and E in equal temperament? How does this compare with Just tuning? How about Pythagorean tuning? 
+    \item What about fifths? So the interval from C to G?
+    \item What is the general formula for the ratio of frequencies for notes exactly n semitones apart?
+    \item If take the frequency range audible to humans to be from 20 Hz to 20.000 Hz, how many keys would a piano need so it can play in the entire frequency band?
+    \item How about a real piano? A standard piano has 88 keys, where the middle A ($f_A = 440$ Hz) is the 49th key. Which is the lowest frequency that the piano can play? What about the highest?
+    \item If your calculations are correct, you'll see that we get quite close to the lower bound of 20 Hz, but that the highest note's frequency is quite far away from 20.000 Hz. Do you have an idea why? \textit{Hint: Think about what a piano looks like when opened. What happens to the number of strings as we go to higher notes? What about the dampers? What does this tell us about the volume of the different keys? Why might it be difficult to generate even higher frequencies? What about the overtones?} 
+\end{itemize}
+
+\end{document}
