@@ -253,7 +253,7 @@ So applying one function after the other brings you back to where you started:
     \item Both concepts are essential for modeling real-world phenomena
 \end{itemize}
 
-\subsection{Application: decibel}
+\subsection{Application: Measuring loudness in decibel}
 
 From the deafening sound of a starting helicopter to a faint whisper, the world is full of sounds of vastly different loudness. If we want to quantify loudness, we'll need to cover a wide range of different magnitudes. Let's first think about what loudness even means. In previous chapters we learned that sound consists of pressure waves. The energy of a pressure wave is not proportional to its amplitude, but to the square of its amplitude. We call this quantity the \textbf{Intensity}. So, given two sound waves differing only in their amplitudes $p_1$, $p_2$, the ratio of their powers $P_1$, $P_2$ (energy per unit time) is given by
 
@@ -288,11 +288,31 @@ So far, we've only talked about ratios of powers. What about absolute values? We
 \textit{Question: What pressure amplitude corresponds to 80 dB?}
 
 \textbf{Answer:} 
-\begin{align}
-    20 \log_10(p/p_{\text{ref}}) &= 80  \\
-    \log_10(p/p_{\text{ref}}) &= 4  \\
+\begin{align*}
+    20 \log_{10}(p/p_{\text{ref}}) &= 80  \\
+    \log_{10}(p/p_{\text{ref}}) &= 4  \\
     p/p_{\text{ref}} &= 10^4 \\
-    p = 
-\end{align}
+    p = 10^4 \cdot 20 \mu P = 10^4 \cdot 2 \cdot 10 \cdot 10^{-6} P &= 0.2 P
+\end{align*}
+This might look like a lot, bot 80 dB isn't dangerous. 85 dB and higher can be dangerous for long exposures.
+
+\textit{Question: Try looking up the decibel range in which the noise of a quiet room, a normal conversation, and a busy street lie.}
+
+\textbf{Answer:} Quiet room: 40 dB; Normal conversation: 60 dB; Street: 80 dB. These are not exact values, and more like ball-park estimates.
+
+Now, human ears don't react equally to all frequencies. They are more sensitive to sounds in the range from 1 kHz to 7 kHz than to much lower or much higher frequencies. To reflect this difference in perceived loudness, we sometimes use a different unit: dBA. That's basically like dB, but with a frequency dependent filter, so that sounds with the same loudness in dBA are perceived to have approximately the same loudness, even if they have very different frequencies. There are also dBB and dBC, which weigh lower frequencies more than dBA does.
+
+Fig. \ref{fig:hearing_curve} shows contours of equal loudness. The \textbf{phon} is a unit for perceived loudness. By definition, the phon is identical to the dB at 1000 kHz. For other frequencies, the dB value for any given phon value was obtained by asking volunteers to adjust the loudness of a signal at that frequency to match the perceived loudness of a 1 kHz sound. The figure shows us that for a 1 kHz signal and a 100 Hz signal to have the same perceived loudness, the 100 Hz signal must be between 10 and 20 dB louder, depending on the loudness of the 1 kHz signal. 
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width = 0.45 \textwidth]{Bilder/ISO226_loudness.png}
+    \caption{Human hearing curves.}
+    \label{fig:hearing_curve}
+    % source: https://www.animations.physics.unsw.edu.au/jw/dB.htm
+\end{figure}
+
+
+
 
 
