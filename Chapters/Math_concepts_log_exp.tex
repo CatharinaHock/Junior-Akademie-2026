@@ -39,6 +39,16 @@ When considering the graph of an exponential function one observes the following
     \item It has a \textbf{horizontal asymptote}
 \end{itemize}
 
+Some graphs of exponential functions are shown in Fig. \ref{fig:exp}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width = 0.45 \textwidth]{Bilder/exp.jpeg}
+    \includegraphics[width = 0.45 \textwidth]{Bilder/exp_decreasing.jpeg}
+    \caption{Exponential functions with different growth factors. The initial value is 1 for all graphs.}
+    \label{fig:exp}
+\end{figure}
+
 \paragraph{Horizontal Asymptote:} 
 A horizontal asymptote is a line that the graph approaches but never reaches. Considering an exponential growth, the graph approches $y=0$ for $x \rightarrow -\infty$. So, with dexreasing $x$, the graph gets closer and closer to zero but never reaches the $x-$axis.
 
@@ -165,6 +175,8 @@ Here:
     2^3 = 8 \quad \Longleftrightarrow \quad \log_2(8) = 3
 \end{equation}
 
+Graphs of some logarithmic functions are shown in Fig. \ref{fig:natural_log}
+
 \paragraph{Intuitive Explanation:}
 \begin{itemize}
     \item Exponential function: you start with a number and calculate the result
@@ -188,6 +200,12 @@ The logarithm with base $e$ is called the natural logarithm and denoted by $\ln$
      log_e (y) = \ln(y)
 \end{equation}
 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width = 0.45 \textwidth]{Bilder/natural log.jpeg}
+    \caption{Graphs of logarithms with different bases, including the natural logarithm.}
+    \label{fig:natural_log}
+\end{figure}
 
 So the natural logarithm answers the question:
 \begin{center}
@@ -234,3 +252,47 @@ So applying one function after the other brings you back to where you started:
     \item Logarithms are the inverse of exponential functions
     \item Both concepts are essential for modeling real-world phenomena
 \end{itemize}
+
+\subsection{Application: decibel}
+
+From the deafening sound of a starting helicopter to a faint whisper, the world is full of sounds of vastly different loudness. If we want to quantify loudness, we'll need to cover a wide range of different magnitudes. Let's first think about what loudness even means. In previous chapters we learned that sound consists of pressure waves. The energy of a pressure wave is not proportional to its amplitude, but to the square of its amplitude. We call this quantity the \textbf{Intensity}. So, given two sound waves differing only in their amplitudes $p_1$, $p_2$, the ratio of their powers $P_1$, $P_2$ (energy per unit time) is given by
+
+\begin{equation}
+    \frac{\text{Power 1}}{\text{Power 2}} = \frac{P_1}{P_2} = \frac{p_1^2}{p_2^2}
+\end{equation}
+
+This ratio of powers is exactly what we want to describe when talking about loudness. The most commonly used unit to quantify loudness is the \textbf{decibel}. Given the powers $P_1$, $P_2$ of our sounds, they differ by 
+\begin{equation}
+    10 \log_{10}(\frac{P_1}{P_2}) \text{dB}
+\end{equation}
+or if you prefer, with the pressure
+\begin{equation}\label{eq:dB}
+    20 \log_{10}(\frac{p_1}{p_2}) \text{dB}
+\end{equation}
+This is where the logarithm shows up again!
+\textbf{This means that a sound that has a ten times higher power will be 10 dB louder.}
+Another thing worth noting is, that to a very good approximation 
+\begin{equation}
+    10 \log(2) \approx 3 
+\end{equation}
+So a sound two times louder will be 3 dB louder. For reference, 1 dB is on the same order as the Just Noticeable Difference. 
+
+Now, why use the logarithm for all of this? Because the logarithmic scaling makes a quantity that spans many orders of magnitude much easier to grasp, with the added bonus that human ears are much closer to perceiving loudness logarithmically than linearly - but we'll talk about that in a moment.
+
+So far, we've only talked about ratios of powers. What about absolute values? We'll need a reference pressure to plug into eq. \ref{eq:dB}, $p_{\text{ref}} = 20 \mu P$.
+
+\textit{Question: What pressure amplitude corresponds to 0 dB? Does this mean there is no sound at all?}
+
+\textbf{Answer:} $p = p_{\text{ref}}$. In particular, the amplitude is \textbf{not zero!}
+
+\textit{Question: What pressure amplitude corresponds to 80 dB?}
+
+\textbf{Answer:} 
+\begin{align}
+    20 \log_10(p/p_{\text{ref}}) &= 80  \\
+    \log_10(p/p_{\text{ref}}) &= 4  \\
+    p/p_{\text{ref}} &= 10^4 \\
+    p = 
+\end{align}
+
+

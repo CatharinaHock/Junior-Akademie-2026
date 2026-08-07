@@ -1,0 +1,312 @@
+\documentclass[a4paper, 11pt]{article}
+%\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{calc}
+%\usepackage{fourier} %% changes everything to sans-serif!
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{textcomp}
+%\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{cd}
+\usepackage{dirtytalk}
+\usepackage{titlesec}
+\usepackage{verbatim}
+\usepackage{pdfpages}
+\usepackage{caption}
+%%\captionsetup[figure]{labelfont=footnotesize}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+%% neu
+\usepackage{physics}
+\usepackage{accents} %% for multiple subscripts
+\usepackage{fancyhdr} %% for header and footer
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{graphicx} % Required for inserting images
+%\usepackage[ngerman]{babel}
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+
+\title{Tuning Systems Exercises}
+\author{Catharina Hock, Stefanie Hövermann}
+\date{August  2026}
+
+\newcommand{\answerline}[1][0.5cm]{%
+    \noindent\rule{#1}{0.4pt}
+}
+
+\begin{document}
+\maketitle 
+
+\section*{Exponential Functions and Logarithms}
+
+\subsection*{Exercise 1: Powers}
+
+Calculate the following.
+
+\begin{enumerate}
+    \item $2^5=$ \rule{2cm}{0.4pt}
+    \item $10^3=$ \rule{2cm}{0.4pt}
+    \item $5^0=$ \rule{2cm}{0.4pt}
+    \item $3^4=$ \rule{2cm}{0.4pt}
+    \item $2^{-2}=$ \rule{2cm}{0.4pt}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\subsection*{Exercise 2: Exponential Growth}
+
+A bacteria culture starts with 200 bacteria. Every hour the number doubles.
+
+\begin{enumerate}
+    \item Complete the table.
+
+    \begin{center}
+    \begin{tabular}{c|ccccc}
+        Time (h) & 0 & 1 & 2 & 3 & 4\\
+        \hline
+        Bacteria & 200 & \rule{1cm}{0.4pt} &
+        \rule{1cm}{0.4pt} &
+        \rule{1cm}{0.4pt} &
+        \rule{1cm}{0.4pt}
+    \end{tabular}
+    \end{center}
+
+    \item Write a formula for the number of bacteria after $t$ hours.
+
+    \vspace{1cm}
+
+    \item How many bacteria are there after 6 hours?
+
+    \vspace{1cm}
+\end{enumerate}
+
+\subsection*{Exercise 3: Exponential Decay}
+
+A radioactive substance loses half of its mass every day. Initially it has 80 g.
+
+\begin{enumerate}
+    \item Complete the table.
+
+    \begin{center}
+    \begin{tabular}{c|ccccc}
+        Days & 0 & 1 & 2 & 3 & 4\\
+        \hline
+        Mass (g) & 80 &
+        \rule{1cm}{0.4pt} &
+        \rule{1cm}{0.4pt} &
+        \rule{1cm}{0.4pt} &
+        \rule{1cm}{0.4pt}
+    \end{tabular}
+    \end{center}
+
+    \item Write a formula for the mass after $t$ days.
+
+    \vspace{1cm}
+
+    \item After how many days is only 10 g left?
+
+    \vspace{1cm}
+\end{enumerate}
+
+\subsection*{Exercise 4: Evaluating Logarithms}
+
+Calculate.
+
+\begin{enumerate}
+    \item $\log_2(8)=$ \rule{2cm}{0.4pt}
+    \item $\log_2(32)=$ \rule{2cm}{0.4pt}
+    \item $\log_{10}(1000)=$ \rule{2cm}{0.4pt}
+    \item $\log_5(25)=$ \rule{2cm}{0.4pt}
+    \item $\log_3(81)=$ \rule{2cm}{0.4pt}
+\end{enumerate}
+
+\subsection*{Exercise 5: Rewrite as Exponentials}
+
+Rewrite each logarithm as an exponential equation.
+
+\begin{enumerate}
+    \item $\log_2(16)=4$
+    \vspace{1cm}
+
+    \item $\log_5(125)=3$
+    \vspace{1cm}
+
+    \item $\log_{10}(100)=2$
+    \vspace{1cm}
+\end{enumerate}
+
+\subsection*{Exercise 6: Rewrite as Logarithms}
+
+Rewrite each exponential equation as a logarithm.
+
+\begin{enumerate}
+    \item $2^6=64$
+    \vspace{1cm}
+
+    \item $3^4=81$
+    \vspace{1cm}
+
+    \item $10^5=100000$
+    \vspace{1cm}
+\end{enumerate}
+
+\subsection*{Exercise 7: Solve the Equations}
+
+\begin{enumerate}
+    \item $2^x=32$
+
+    \vspace{1cm}
+
+    \item $10^x=1000$
+
+    \vspace{1cm}
+
+    \item $3^x=81$
+
+    \vspace{1cm}
+
+    \item $\log_2(x)=5$
+
+    \vspace{1cm}
+
+    \item $\log_{10}(x)=4$
+
+    \vspace{1cm}
+\end{enumerate}
+
+\subsection*{Exercise 8: Word Problems}
+
+\begin{enumerate}
+    \item A savings account contains €500 and grows by 5\% every year.
+    \begin{enumerate}
+        \item Write a formula for the balance after $t$ years.
+        \item How much money is in the account after 4 years?
+    \end{enumerate}
+
+    \vspace{1cm}
+
+    \item A rumor spreads through a school. The number of students who know it triples every day. On the first day, 4 students know the rumor.
+    \begin{enumerate}
+        \item Write an exponential model.
+        \item How many students know the rumor after 5 days?
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{Challenge}
+
+Without using a calculator, solve:
+
+\[
+2^{x+1}=64.
+\]
+
+\vspace{1cm}
+
+\[
+\log_2(x-1)=3.
+\]
+
+\vspace{1cm}
+
+Explain in your own words why logarithms are called the \emph{inverse} of exponential functions.
+
+\subsection*{Exercise 9: The Natural Exponential Function}
+
+Recall that
+\[
+\exp(x)=e^x.
+\]
+
+Calculate the following. Give exact answers where possible.
+
+\begin{enumerate}
+    \item $\exp(0)=$ \rule{2cm}{0.4pt}
+    \item $\exp(1)=$ \rule{2cm}{0.4pt}
+    \item $\exp(2)=$ \rule{2cm}{0.4pt}
+    \item $\exp(-1)\approx$ \rule{2cm}{0.4pt}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+Rewrite each expression using powers of $e$.
+
+\begin{enumerate}
+    \item $\exp(3)$
+    \vspace{0.8cm}
+
+    \item $\exp(-2)$
+    \vspace{0.8cm}
+
+    \item $\exp(x)$
+    \vspace{0.8cm}
+\end{enumerate}
+
+\subsection*{Exercise 10: The Natural Logarithm}
+
+Recall that
+\[
+\ln(x)=\log_e(x).
+\]
+
+Calculate.
+
+\begin{enumerate}
+    \item $\ln(e)=$ \rule{2cm}{0.4pt}
+    \item $\ln(e^3)=$ \rule{2cm}{0.4pt}
+    \item $\ln(1)=$ \rule{2cm}{0.4pt}
+    \item $\ln(e^{-2})=$ \rule{2cm}{0.4pt}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+Rewrite each equation.
+
+\begin{enumerate}
+    \item $e^3=20.09\ldots$
+    \vspace{1cm}
+
+    \item $\ln(x)=2$
+    \vspace{1cm}
+
+    \item $e^x=7$
+    \vspace{1cm}
+\end{enumerate}
+
+\subsection*{Exercise 11: Solving Equations}
+
+Solve the following.
+
+\begin{enumerate}
+    \item $e^x=e^5$
+
+    \vspace{1cm}
+
+    \item $\ln(x)=4$
+
+    \vspace{1cm}
+
+    \item $e^{2x}=e^8$
+
+    \vspace{1cm}
+
+    \item $\ln(e^{-5})$
+
+    \vspace{1cm}
+
+    \item $e^{\ln(7)}$
+
+    \vspace{1cm}
+
+    \item $\ln(e^{12})$
+
+    \vspace{1cm}
+\end{enumerate}
+
+
+\end{document}
