@@ -1,0 +1,1010 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{enumitem}
+
+\title{Trigonometric functions}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction: Prior knowledge of trigonometry}
+
+Draw a right-angled triangle on the board and mark one angle $\alpha$. Students in groups, they discuss questions
+
+Ask the students:
+
+\begin{itemize}
+    \item What do you already know about sine and cosine?
+    \item Where have you seen these functions before?
+    \item What is special about the triangle we need?
+    \item Which side is the hypotenuse?
+    \item Which sides are the opposite and adjacent sides with respect to
+    the angle $\alpha$?
+\end{itemize}
+\subsection*{1. Definitions}
+Write definitions on the board :
+
+\begin{equation}
+    \sin(\alpha)
+    =
+    \frac{\text{opposite side}}{\text{hypotenuse}}
+\end{equation}
+
+\begin{equation}
+    \cos(\alpha)
+    =
+    \frac{\text{adjacent side}}{\text{hypotenuse}}
+\end{equation}
+
+.
+
+
+\subsection*{2. Similar Triangles}
+
+Hand out \textbf{Exercise 1} or draw different triangles, some of them are similar. 
+
+Let them compare triangles that have the same angle but different sizes.
+
+\textbf{Discussion:}
+
+\begin{itemize}
+    \item What is different between the triangles?
+    \item What stays the same?
+    \item What happens to the side lengths when we make the triangle bigger?
+    \item What happens to the ratios of the side lengths?
+    \item What do you notice about $\sin(\alpha)$ and $\cos(\alpha)$?
+\end{itemize}
+
+The students should discover that similar triangles have different side
+lengths, but the ratios of the corresponding sides remain the same.
+
+Therefore,
+
+\begin{center}
+    \fbox{\parbox{0.8\textwidth}{
+    \centering
+    For a fixed angle $\alpha$, the values of
+    $\sin(\alpha)$ and $\cos(\alpha)$ are always the same.
+
+    They depend on the \textbf{angle}, not on the size of the triangle.
+    }}
+\end{center}
+
+Ask:
+
+\begin{quote}
+    ``So if I tell you only the angle $\alpha$, do you need to know
+    which particular triangle I am talking about in order to know
+    $\sin(\alpha)$?''
+\end{quote}
+
+This motivates thinking of sine and cosine as \textbf{functions of an angle}:
+
+\begin{equation}
+    \alpha
+    \longmapsto
+    \sin(\alpha),
+    \qquad
+    \alpha
+    \longmapsto
+    \cos(\alpha).
+\end{equation}
+
+
+\subsubsection*{3. A Useful Relationship}
+
+Continue with \textbf{Exercise 2}.
+
+The students use Pythagoras' theorem to determine the missing side and
+calculate $\sin(\alpha)$ and $\cos(\alpha)$.
+
+Then ask them to calculate
+
+\begin{equation}
+    \sin^2(\alpha)+\cos^2(\alpha).
+\end{equation}
+
+Ask:
+
+\begin{quote}
+    ``Do you think the result is just a coincidence?''
+\end{quote}
+
+Let the students try to explain their observation using the triangle.
+
+If the opposite side is $a$, the adjacent side is $b$ and the hypotenuse
+is $c$, then
+
+\begin{equation}
+    \sin^2(\alpha)+\cos^2(\alpha)
+    =
+    \frac{a^2}{c^2}+\frac{b^2}{c^2}
+    =
+    \frac{a^2+b^2}{c^2}.
+\end{equation}
+
+Using Pythagoras' theorem,
+
+\begin{equation}
+    a^2+b^2=c^2,
+\end{equation}
+
+we obtain
+
+\begin{equation}
+    \boxed{\sin^2(\alpha)+\cos^2(\alpha)=1}.
+\end{equation}
+
+\textbf{this correlation is not coincidence but holds for all angles }
+
+\subsubsection*{4. Short Application}
+
+Use \textbf{Exercise 3} as a short application.
+
+A ladder of length $5\,\mathrm{m}$ leans against a wall at an angle of
+$60^\circ$.
+
+Ask:
+
+\begin{itemize}
+    \item Which side of the triangle do we know?
+    \item Which side do we want to determine?
+    \item Should we use sine or cosine?
+    \item Can you write down an equation for the height $h$?
+\end{itemize}
+
+The students should obtain
+
+\begin{equation}
+    \sin(60^\circ)=\frac{h}{5\,\mathrm{m}}
+\end{equation}
+
+and therefore
+
+\begin{equation}
+    h=5\,\mathrm{m}\cdot\sin(60^\circ).
+\end{equation}
+
+
+\subsubsection*{5. Transition to the Unit Circle}
+
+Finish this part with a question that exposes a limitation of the triangle
+definition.
+
+Write on the board:
+
+\begin{equation}
+    \sin(30^\circ)
+\end{equation}
+
+and ask:
+
+\begin{quote}
+    ``Can we understand this using a right-angled triangle?''
+\end{quote}
+
+Then write:
+
+\begin{equation}
+    \sin(120^\circ).
+\end{equation}
+
+Ask:
+
+\begin{quote}
+    ``What about this one? Can a right-angled triangle have an angle of
+    $120^\circ$?''
+\end{quote}
+
+The answer is no.
+
+Nevertheless, a calculator gives a perfectly well-defined value for
+$\sin(120^\circ)$ and even solution for angles $\alpha > 360 ^\circ$.
+
+\textbf{Guiding question:}
+
+\begin{center}
+    \fbox{\parbox{0.8\textwidth}{
+    \centering
+    How can we extend our idea of sine and cosine so that they work
+    for \textbf{any angle}, not only angles inside a right-angled triangle? 
+    }}
+\end{center}
+
+If no one has an answer, name \textbf{unit circle}.
+
+\subection*{ The Unit circle}
+
+\begin{quote}
+    ``Instead of putting our angle inside a triangle, we can now think of the angle as a rotation in a coordinate system.''
+\end{quote}
+
+\begin{itemize}
+\item Draw circle with radius 1, a straight line through the origin and the circle in the first quadrant 
+\item endpoint coordinates P(x,y) 
+\item for the first quadrant: draw corresponding right-angled triangle 
+\end{itemize}
+
+\textbf{Questions:}
+
+\begin{itemize}
+    \item What is the length of the hypotenuse?
+    \item What is the adjacent side?
+    \item What is the opposite side?
+    \item calculate sine and cosine of the angle 
+\end{itemize}
+
+Since radius of the circle is $1$ 
+
+\begin{equation}
+    \cos(\alpha)
+    =
+    \frac{x}{1}
+    =
+    x
+\end{equation}
+
+and
+
+\begin{equation}
+    \sin(\alpha)
+    =
+    \frac{y}{1}
+    =
+    y.
+\end{equation}
+
+Therefore,
+
+\begin{equation}
+    \boxed{P=(\cos\alpha,\sin\alpha)}.
+\end{equation}
+
+\begin{itemize}
+    \item not a completely new definition
+    \item for angles $ < 90^\circ $ definition equals our former definition with a right triangle 
+\end{itemize}
+
+
+\subsubsection*{ Going Beyond $90^\circ$}
+
+Now rotate the radius further around the circle.
+
+Consider, for example,
+
+\begin{equation}
+    \alpha=120^\circ.
+\end{equation}
+
+Ask:
+
+\begin{itemize}
+    \item Where is the point on the circle?
+    \item Is its $x$-coordinate positive or negative?
+    \item Is its $y$-coordinate positive or negative?
+    \item What does this tell us about $\cos(120^\circ)$?
+    \item What does this tell us about $\sin(120^\circ)$?
+\end{itemize}
+
+For the second quadrant we notice:
+
+\begin{equation}
+    \cos(\alpha)<0,
+    \qquad
+    \sin(\alpha)>0.
+\end{equation}
+
+Continue briefly through the other quadrants and let the students
+predict the signs of sine and cosine.
+
+\begin{center}
+\begin{tabular}{c|c|c}
+    \textbf{Quadrant} & $\boldsymbol{\cos(\alpha)}$
+                      & $\boldsymbol{\sin(\alpha)}$ \\ \hline
+    I   & $+$ & $+$ \\
+    II  & $-$ & $+$ \\
+    III & $-$ & $-$ \\
+    IV  & $+$ & $-$
+\end{tabular}
+\end{center}
+
+\subsubsection*{ Degrees and Radians}
+
+There is another way of measuring angles called radians
+\paragraph{An intuitive way to think about radians}
+
+Imagine a circle with radius $1$. Start at the point $(1,0)$ and move
+along the edge of the circle.
+
+Instead of measuring how far you have turned in degrees, we can measure
+the angle by asking:
+
+\begin{quote}
+    ``How far have I travelled along the circle until I reach the point associated with the angle?''
+\end{quote}
+
+For a circle with radius $1$, this distance is exactly the angle measured
+in \textbf{radians}.
+
+The circumference of the unit circle is
+
+\begin{equation}
+    C = 2\pi.
+\end{equation}
+
+Therefore, after travelling once around the entire circle, we have
+travelled a distance of $2\pi$. This corresponds to a full rotation:
+
+\begin{equation}
+    360^\circ = 2\pi.
+\end{equation}
+
+Can you imagine what the following angles are in radians:
+\begin{itemize}
+    \item   $180^\circ = \pi$
+    \item  $90^\circ = \frac{\pi}{2}$
+    \item $270^\circ = \frac{3\pi}{2},$
+    \item $360^\circ = 2\pi.$
+\end{itemize}
+    evtl. \textbf{Exercise 4}
+
+\subsection*{5. Exploring the Unit Circle}
+
+evtl.  \textbf{Exercise 5}.
+
+Let the students label the four points on the unit circle and complete
+the table for
+
+\begin{equation}
+    0,\quad
+    \frac{\pi}{2},\quad
+    \pi,\quad
+    \frac{3\pi}{2},\quad
+    2\pi.
+\end{equation}
+
+Do not give them the sine and cosine values immediately.
+
+Instead, repeatedly ask:
+
+\begin{quote}
+    ``What are the coordinates of the point?''
+\end{quote}
+
+and then:
+
+\begin{quote}
+    ``If the coordinates are $(\cos\alpha,\sin\alpha)$,
+    what are $\cos\alpha$ and $\sin\alpha$?''
+\end{quote}
+
+The completed table is
+
+\begin{center}
+\begin{tabular}{c|c|c}
+    $\boldsymbol{\alpha}$ &
+    $\boldsymbol{\cos(\alpha)}$ &
+    $\boldsymbol{\sin(\alpha)}$ \\ \hline
+    $0$              & $1$  & $0$  \\
+    $\frac{\pi}{2}$  & $0$  & $1$  \\
+    $\pi$             & $-1$ & $0$  \\
+    $\frac{3\pi}{2}$ & $0$  & $-1$ \\
+    $2\pi$            & $1$  & $0$
+\end{tabular}
+\end{center}
+
+
+\subsubsection*{Preparing the Next Discovery}
+
+Finally, ask the students to imagine that the point moves continuously
+around the unit circle.
+
+\begin{quote}
+    ``While the point moves around the circle, what happens to its
+    $y$-coordinate?''
+\end{quote}
+
+Collect a few observations:
+
+\begin{equation}
+    0
+    \rightarrow
+    1
+    \rightarrow
+    0
+    \rightarrow
+    -1
+    \rightarrow
+    0.
+\end{equation}
+
+Discuss the following questions in groups: 
+
+\begin{quote}
+    ``What would happen if we plotted this $y$-coordinate against the
+    angle $\alpha$?''
+\end{quote}
+
+
+
+
+
+\section{Trigonometric function}
+
+So far, we have considered individual angles and determined their sine
+and cosine using the unit circle.
+Now we want to change our perspective.
+
+\begin{quote}
+    ``What happens to sine and cosine if we do not look at just one angle,
+    but continuously change the angle?''
+\end{quote}
+
+\subsection{Turning values into graphs}
+
+\begin{align*}
+    \alpha=0
+        &\quad\Rightarrow\quad \sin(\alpha)=0,\\
+    \alpha=\frac{\pi}{2}
+        &\quad\Rightarrow\quad \sin(\alpha)=1,\\
+    \alpha=\pi
+        &\quad\Rightarrow\quad \sin(\alpha)=0,\\
+    \alpha=\frac{3\pi}{2}
+        &\quad\Rightarrow\quad \sin(\alpha)=-1,\\
+    \alpha=2\pi
+        &\quad\Rightarrow\quad \sin(\alpha)=0.
+\end{align*}
+
+Ask:
+
+\begin{quote}
+    ``What happens between these points?''
+\end{quote}
+
+
+The point on the circle moves continuously, so its vertical coordinate
+also changes continuously.
+
+Collect ideas, finally shpw simulation 
+
+Simulation
+https://www.geogebra.org/m/jfrrtwrw?utm_source=chatgpt.com
+
+https://animg.app/en/animation/unit-circle-generates-sine-wave-hRwsY8Hw?utm_source=chatgpt.com
+
+
+\begin{center}
+\fbox{\parbox{0.82\textwidth}{
+\centering
+The sine function describes the vertical coordinate of a point
+moving around the unit circle.
+}}
+\end{center}
+
+
+\subsection*{ What Do We Notice About the Sine Function?}
+
+Look at the resulting graph together.
+
+
+\textbf{Discussion:}
+
+\begin{itemize}
+    \item What is the largest value the sine can have?
+    \item What is the smallest value?
+    \item At which angles is $\sin(\alpha)=0$?
+    \item Can we continue rotating the point after one complete turn?
+    \item Can we also rotate the point in the opposite direction?
+    \item What happens after one complete turn around the circle?
+\end{itemize}
+
+\paragraph{Domain}
+
+Ask:
+
+\begin{quote}
+    ``Which angles can we put into the sine function?''
+\end{quote}
+
+Using the unit circle, we can rotate the point by any angle.
+We can continue for more than one full rotation, and we can also rotate
+in the opposite direction, corresponding to negative angles.
+
+Therefore, the sine function is defined for all real numbers:
+
+\begin{equation}
+    \boxed{\text{Domain: } \alpha \in \mathbb{R}}
+\end{equation}
+
+\paragraph{Range}
+
+Now ask:
+
+\begin{quote}
+    ``Which values can come out of the sine function?''
+\end{quote}
+
+Since $\sin(\alpha)$ is the vertical coordinate of a point on the unit
+circle, it can never be larger than $1$ or smaller than $-1$.
+
+Therefore,
+
+\begin{equation}
+    \boxed{\text{Range: } -1 \leq \sin(\alpha) \leq 1}
+\end{equation}
+
+or, using interval notation,
+
+\begin{equation}
+    \boxed{\text{Range: } [-1,1]}.
+\end{equation}
+
+\paragraph{Periodicity}
+
+Finally, consider what happens after one complete rotation.
+
+After an angle of $2\pi$, the point has returned to exactly the same
+position on the unit circle. Therefore, all sine values start repeating:
+
+\begin{equation}
+    \boxed{\sin(\alpha+2\pi)=\sin(\alpha)}.
+\end{equation}
+
+A function whose values repeat after a certain interval is called a
+\textbf{periodic function}.
+
+The sine function has the period
+
+\begin{equation}
+    \boxed{T=2\pi}.
+\end{equation}
+
+\paragraph{Summary}
+
+From the unit circle and the graph, we have discovered fot the function $f(\alpha)= sin(\alpha)$:
+
+\begin{itemize}
+    \item \textbf{Domain:} $\mathbb{R}$
+    \item \textbf{Range:} $[-1,1]$
+    \item \textbf{Maximum:} $1$
+    \item \textbf{Minimum:} $-1$
+    \item \textbf{Period:} $2\pi$
+\end{itemize}
+\subsection*{ What About Cosine?}
+
+Now return to the unit circle.
+
+Ask:
+
+\begin{quote}
+    ``For the sine function, we followed the vertical coordinate.
+    What would we have to follow to obtain the cosine function?''
+\end{quote}
+
+Since
+
+\begin{equation}
+    \cos(\alpha)=x_P,
+\end{equation}
+
+the cosine describes the \textbf{horizontal position} of the point on
+the unit circle.
+
+Again consider the important angles:
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+$\alpha$
+& $0$
+& $\frac{\pi}{2}$
+& $\pi$
+& $\frac{3\pi}{2}$
+& $2\pi$ \\ \hline
+$\cos(\alpha)$
+& $1$
+& $0$
+& $-1$
+& $0$
+& $1$
+\end{tabular}
+\end{center}
+
+Ask the students to predict the shape of the cosine graph before
+showing or drawing it.
+
+Then draw the sine and cosine functions in the same coordinate system.
+
+Ask:
+
+\begin{itemize}
+    \item What do sine and cosine have in common?
+    \item What is different?
+    \item Do they have the same maximum and minimum values?
+    \item Do they have the same period?
+    \item Could we move one graph horizontally so that it lies exactly
+    on top of the other?
+\end{itemize}
+
+The students should notice that both functions have the same shape but
+start at different points.
+
+The cosine function starts at its maximum,
+
+\begin{equation}
+    \cos(0)=1,
+\end{equation}
+
+
+while the sine function starts at a zero crossing,
+
+\begin{equation}
+    \sin(0)=0.
+\end{equation}
+
+The two graphs are shifted relative to each other by a quarter of a
+complete period:
+
+\begin{equation}
+    \boxed{
+    \cos(\alpha)
+    =
+    \sin\left(\alpha+\frac{\pi}{2}\right)
+    }.
+\end{equation}
+
+This horizontal displacement is called a \textbf{phase shift}.
+
+\subsection*{Transforming Sine and Cosine Functions}
+
+So far, we have considered the basic sine and cosine functions
+
+\begin{equation}
+    f(x)=\sin(x)
+    \qquad \text{and} \qquad
+    f(x)=\cos(x).
+\end{equation}
+
+Both oscillate between $-1$ and $1$ and have a period of $2\pi$.
+
+But real oscillations can look very different.
+
+\textbf{Discussion:}
+
+\begin{itemize}
+    \item Do all oscillations have the same maximum displacement?
+    \item Do all oscillations take the same amount of time for one cycle?
+    \item Do all oscillations start at the same point?
+    \item How could we modify our sine and cosine functions to describe
+    these different situations?
+\end{itemize}
+
+We will investigate this by changing the functions step by step.
+-
+\subsubsection*{1. Changing the Amplitude}
+
+Start with
+
+\begin{equation}
+    f(x)=\sin(x).
+\end{equation}
+
+Compare it with
+
+\begin{equation}
+    f(x)=2\sin(x)
+\end{equation}
+
+and
+
+\begin{equation}
+    f(x)=\frac{1}{2}\sin(x).
+\end{equation}
+
+Plot the three functions in the same coordinate system.
+
+\textbf{Discussion:}
+
+\begin{itemize}
+    \item What changes?
+    \item What stays the same?
+    \item What are the maximum and minimum values of each function?
+    \item Does the period change?
+\end{itemize}
+
+Let the students complete \textbf{Exercise 13}.
+
+The students should discover that the number in front of the sine
+changes how far the graph moves away from its middle line.
+
+In general,
+
+\begin{equation}
+    f(x)=a\sin(x).
+\end{equation}
+
+The amplitude is
+
+\begin{equation}
+    \boxed{A=|a|}.
+\end{equation}
+
+For example,
+
+\begin{equation*}
+    3\sin(x)
+\end{equation*}
+
+oscillates between $-3$ and $3$.
+
+If $a<0$, the graph is additionally reflected across the $x$-axis.
+
+
+\subsubsection*{2. Moving the Whole Oscillation Up and Down}
+
+Ask: How can you modify the function such that the whole graph is shifted up/down
+
+\begin{equation}
+    f(x)=\sin(x),
+\end{equation}
+
+\begin{equation}
+    f(x)=\sin(x)+2,
+\end{equation}
+
+and
+
+\begin{equation}
+    f(x)=\sin(x)-1.
+\end{equation}
+
+Ask:
+
+\begin{itemize}
+    \item Does the shape of the graph change?
+    \item Does the amplitude change?
+    \item Does the period change?
+    \item What happens to the middle line of the oscillation?
+\end{itemize}
+
+The students should discover that adding a number moves the entire
+graph vertically.
+
+In general,
+
+\begin{equation}
+    f(x)=\sin(x)+d.
+\end{equation}
+
+The middle line is now
+
+\begin{equation}
+    \boxed{y=d}.
+\end{equation}
+
+Therefore,
+
+\begin{itemize}
+    \item $d>0$: the graph moves upwards,
+    \item $d<0$: the graph moves downwards.
+\end{itemize}
+
+
+% --------------------------------------------------
+\subsubsection*{3. Changing the Period}
+
+Return to the basic sine function and compare
+
+\begin{equation}
+    f(x)=\sin(x)
+\end{equation}
+
+with
+
+\begin{equation}
+    f(x)=\sin(2x).
+\end{equation}
+
+Let the students first look at the graphs without giving them the rule.
+
+\textbf{Discussion:}
+
+\begin{itemize}
+    \item How many complete oscillations does $\sin(x)$ make between
+    $0$ and $2\pi$?
+    \item How many complete oscillations does $\sin(2x)$ make?
+    \item Which function repeats faster?
+    \item What is the period of $\sin(2x)$?
+    \item Does the amplitude change?
+\end{itemize}
+
+Let the students complete \textbf{Exercise 14}.
+
+Then consider another example:
+
+\begin{equation}
+    f(x)=\sin\left(\frac{1}{2}x\right).
+\end{equation}
+
+Ask the students to predict what will happen before plotting the function.
+
+For the general function
+
+\begin{equation}
+    f(x)=\sin(bx),
+\end{equation}
+
+the period is
+
+\begin{equation}
+    \boxed{T=\frac{2\pi}{|b|}}.
+\end{equation}
+
+Thus, a larger value of $|b|$ means a shorter period and therefore
+more oscillations in the same interval.
+
+\begin{center}
+\fbox{\parbox{0.82\textwidth}{
+\centering
+The factor outside the sine changes the \textbf{amplitude}.
+
+The factor multiplying $x$ inside the sine changes the
+\textbf{period}.
+}}
+\end{center}
+
+
+% --------------------------------------------------
+\subsubsection*{4. Shifting the Oscillation Horizontally}
+
+Now compare
+
+\begin{equation}
+    f(x)=\sin(x)
+\end{equation}
+
+and
+
+\begin{equation}
+    f(x)=\sin\left(x-\frac{\pi}{2}\right).
+\end{equation}
+
+Ask:
+
+\begin{itemize}
+    \item Has the shape of the graph changed?
+    \item Has the amplitude changed?
+    \item Has the period changed?
+    \item Where is the first graph at $x=0$?
+    \item Where is the second graph at $x=0$?
+    \item In which direction has the graph moved?
+\end{itemize}
+
+The students should discover that the entire oscillation has been
+shifted horizontally.
+
+For
+
+\begin{equation}
+    f(x)=\sin(x+c),
+\end{equation}
+
+the graph is shifted by
+
+\begin{equation}
+    -c.
+\end{equation}
+
+Therefore,
+
+\begin{itemize}
+    \item $\sin(x-c)$ is shifted to the \textbf{right} by $c$,
+    \item $\sin(x+c)$ is shifted to the \textbf{left} by $c$.
+\end{itemize}
+
+This horizontal shift is called the \textbf{phase shift}.
+
+
+% --------------------------------------------------
+\subsubsection*{5. Putting Everything Together}
+
+We can now combine all four transformations.
+
+A general transformed sine function can be written as
+
+\begin{equation}
+    \boxed{
+    f(x)=a\sin(bx+c)+d
+    }.
+\end{equation}
+
+Similarly, for cosine,
+
+\begin{equation}
+    \boxed{
+    f(x)=a\cos(bx+c)+d
+    }.
+\end{equation}
+
+The parameters have the following effects:
+
+\begin{center}
+\begin{tabular}{c|c|c}
+\textbf{Parameter} & \textbf{What does it change?} & \textbf{Value} \\ \hline
+$a$ & Amplitude & $A=|a|$ \\[2mm]
+$b$ & Period & $T=\dfrac{2\pi}{|b|}$ \\[3mm]
+$c$ & Horizontal position / phase & shift $=-\dfrac{c}{b}$ \\[3mm]
+$d$ & Vertical position & middle line $y=d$
+\end{tabular}
+\end{center}
+
+\textbf{Important:} The same rules apply to both sine and cosine.
+
+
+% --------------------------------------------------
+\subsubsection*{6. Can We Read a Function?}
+
+Before calculating anything, show the students an example:
+
+\begin{equation}
+    f(x)=2\sin\left(3x-\frac{\pi}{2}\right)+1.
+\end{equation}
+
+Ask them to identify the four parameters:
+
+\begin{equation}
+    a=2,
+    \qquad
+    b=3,
+    \qquad
+    c=-\frac{\pi}{2},
+    \qquad
+    d=1.
+\end{equation}
+
+Then determine the properties step by step:
+
+\begin{align}
+    \text{Amplitude:}\qquad
+    A &= 2,\\
+    \text{Period:}\qquad
+    T &= \frac{2\pi}{3},\\
+    \text{Phase shift:}\qquad
+    -\frac{c}{b}
+      &= \frac{\pi}{6},\\
+    \text{Middle line:}\qquad
+    y &= 1.
+\end{align}
+
+Therefore, the function describes an oscillation with amplitude $2$
+around the middle line $y=1$, with a period of $2\pi/3$, shifted by
+$\pi/6$ to the right.
+
+
+% --------------------------------------------------
+\subsubsection*{7. From Mathematics to Physics}
+
+Finally, return to the question from the beginning:
+
+\begin{quote}
+    ``What physical systems or phenomena can be described by sine and cosine functions?''
+\end{quote}
+
+
+\textbf{Possible answers:}
+\begin{itemize}
+    \item a swinging pendulum
+    \item a mass attached to a spring
+    \item a vibrating string
+    \item sound waves
+    \item water waves (approximately)
+    \item alternating current
+    \item electromagnetic waves, such as light
+\end{itemize}
+
+\end{document}
