@@ -58,8 +58,10 @@ Now, we're going to put our understanding of acoustics to the test to build our 
 As can be seen in Fig. \ref{fig:pan}, a pan flute consists of many individual pipes. Each pipe will produce a specific tone when you blow over it. 
 
 \textit{Question: Try to explain in your own words why this works. What happens if you blow over a pipe?}
+\vspace{4cm}
 
 \textit{Question: Have a closer look at Fig. \ref{fig:pan}. Do you notice something interesting about the lengths of the pipes? Do they get longer linearly? Logarithmically? Exponentially? Do you have an idea why? Remember what we learned about tuning systems.}
+\vspace{4cm}
 
 After learning about different tuning systems, we know which frequencies we need to include to be able to play in a certain key. 
 Before we get into this, recall that in our discussion of waves, we talked about harmonic waves in pipes with one and two fixed ends. Recall that the conditions for the occurring wavelengths were 
@@ -78,14 +80,16 @@ For the n-th mode for a medium with one fixed and one free end.
 How does this translate to the case of the pipes? Having two closed off ends for a pipe seems very impractical, because there's no way to blow over it and excite an oscillation. In fact, we must think carefully about what fixed and free ends even mean in the context of sound, which are pressure waves.
 
 \textit{Question: At the open end of the pipe, can air flow in and out? Can the pressure change? What about the closed end? Can the air flow in and out? Can the pressure change? How does this correspond to free and fixed ends?}
-
-\textbf{Answer:} Thinking about this carefully, we see that at the \textbf{open} end of the pipe, the pressure is \textbf{fixed}, since it must always be equal to the pressure outside of the pipe, which is just the atmospheric pressure. On the other hand, the air can move in and out freely through the open end. 
+\vspace{6cm}
+\begin{comment}\textbf{Answer:} Thinking about this carefully, we see that at the \textbf{open} end of the pipe, the pressure is \textbf{fixed}, since it must always be equal to the pressure outside of the pipe, which is just the atmospheric pressure. On the other hand, the air can move in and out freely through the open end. 
 At the \textbf{closed} end of the pipe, the pressure is \textbf{free} to take pretty much any value, whereas the air cannot flow through it.
 
 This means that a pipe with two open ends corresponds to the case of a medium with two fixed ends, because the pressure will be fixed at both ends!
-
+\end{comment}
+\newpage 
 \textit{Question: Assuming we want our lowest note to be as low as possible, with a finite amount of pipes available to us, which should we choose? Pipes with two open ends or pipes with one open and one closed end? Why?}
-
+\vspace{4cm}
+\begin{comment}
 \textbf{Answer:} The lower the pitch of the note, the lower the frequency will be, and hence the larger the wavelength will be. So we want to maximize the wavelength of the first mode of a given pipe of length $l$. If we leave both ends open, the first harmonic will have $l=\lambda/2$, so $\lambda = 2l$. If we close one end, the first mode will satisfy $l = \lambda/4$, so $\lambda = 4l$, which is clearly bigger. Hence, we should use pipes with one closed and one open end.
 
 With this settled, we can finally begin our calculations. We'll only use this formula from now on:
@@ -104,16 +108,25 @@ Rewriting this, we obtain
 \begin{align}
     f = v/\lambda = \frac{v}{4l}.
 \end{align}
+\end{comment}
 
 \textit{Question: How long would the pipe have to be to produce the middle A, so $f = 440$ Hz? What about a pipe with two open ends?}
 
+\vspace{3cm}
+\begin{comment}
+    
 \textbf{Answer:} We rewrite the previous equation
 \begin{align}
     l = \frac{v}{4f}
 \end{align}
 So $l = 19.3$ cm. This is a bit unwieldy, but still much better than the $38.6$ cm we would have needed for a pipe with two open ends!
 
+\end{comment}
 \textit{Question: Using equal temperament, calculate the pipe lengths for the chromatic scale.}
+
+\vspace{5cm}
+
+\newpage 
 
 \textbf{Answer:}
 
@@ -140,6 +153,7 @@ So $l = 19.3$ cm. This is a bit unwieldy, but still much better than the $38.6$ 
     \label{tab:pipe_lengths}
 \end{table}
 
+
 \textit{Optional: If you prefer, you can also do this for Just tuning or Pythagorean tuning. You'll have to pick the key you want to play in first. I suggest you use the lowest note as the key the scale is in. Have a look at Tab. \ref{tab:pipe_lengths} and chose a note that has a reasonable pipe length. Then do the calculations based on that length.}
 
 To save material, we'll only build one octave and only the diatonic scale. (So only 8 pipes in total). Pick a key to play in and choose the corresponding notes and pipe lengths from Tab. \ref{tab:pipe_lengths}.
@@ -153,7 +167,7 @@ If at any point you're unsure about the instructions, feel free to ask the cours
     \item Show the course leaders your measurements and reasoning. \textbf{Do this before you start sawing the pipe! If you cut incorrectly, we might not have enough pipes for everyone.}
     \item Saw the pipes apart where you marked them with the pencil.
     \item Sand the ends of the pipes with the sanding paper. Make sure there are no splinters sticking out. Those could hurt you while playing the instrument.
-    \item Block one end of each pipe with the clay.
+    \item Block one end of each pipe with the clay. Blow over the pipe to check that it produces the desired note. Adjust the clay until the note is correct. Then let the clay dry.
     \item Arrange the pipes from largest to smallest. Make sure the open ends of the pipes align. This will make it easier to play. When you're satisfied with your arrangement, tape the pipes together provisorically.
     \item Now, glue the pipes together with the glue gun. Be careful, its tip is very hot! Try not to get any hot glue on your hands and your clothes, and make sure to put a piece of cardboard under your flute before starting to glue. It's quite hard to get the glue off the table again.
     \item Wait for the glue to cool off. Flip the pipe, and glue it together on the other side, too.
